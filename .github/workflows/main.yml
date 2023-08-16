@@ -1,7 +1,7 @@
 name: CI/CD tasks
 on:
     push:
-        branches: [dev]
+        branches: [main]
 jobs:
     build:
         runs-on: Ubuntu-22.04
@@ -18,12 +18,12 @@ jobs:
                       if [ -d ~/www/e-harogna.mg/ ]; then
                           echo "==> Repository exists. Performing git pull..."
                           cd ~/www/e-harogna.mg/
-                          git pull origin dev
+                          git pull origin main
                       else
                           echo "==> Repository does not exist. Cloning the repository..."
                           mkdir -p ~/www/e-harogna.mg/
                           cd ~/www/e-harogna.mg/
-                          git clone git@github.com:FandresenaJasmin/e-harogna.git .
+                          git clone git@github.com:Zafimahafeno/e-harogna.mg.git .
                           cp ~/www/.env/.env .
                       fi
                       echo "==> Running the rest of commands..."
