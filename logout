@@ -1,0 +1,55 @@
+// Modules requis
+const express = require('express');
+const session = require('express-ses­sion');
+
+// Initialisation de l'application Express
+const app = express();
+
+// Configuration de la session
+app.use(session({
+secret: 'votre_secret',
+resave: false,
+saveUninitialized: false
+}));
+
+// Route pour afficher le bouton de déconnexion
+app.get('/', (req, res) => {
+if (req.session.loggedi­n){
+res.send(`
+<h1>Bienvenue, ${req.session.userna­me} !</h1>
+<form action="/logout" method="POST">
+<button type="submit">Déconn­exion</button>
+</form>
+`);
+} else {
+res.send(`
+<h1>Veuillez vous connecter</h1>
+<form action="/login" method="POST">
+<input type="text" name="username" placeholder="Nom d'utilisateur" required />
+<input type="password" name="password" placeholder="Mot de passe" required />
+<button type="submit">Connex­ion</button>
+</form>
+`);
+}
+});
+
+// Route pour gérer la soumission du formulaire de connexion app.post('/login-register', (req, res) => {
+const { username, password } = req.body;
+// Vérifier les informations d'identification
+// Exemple simple : vérification statique
+if (username === 'admin' && password === 'password') {
+req.session.loggedin­ = true;
+req.session.username­ = username;
+}
+res.redirect('/');
+
+// Route pour gérer la déconnexion
+app.post('/logout', (req, res) => {
+req.session.destroy(­);
+res.redirect('/');
+});
+
+// Démarrer le serveur
+app.listen(3000, () => {
+console.log('Serveur­ démarré sur le port 3000');
+});

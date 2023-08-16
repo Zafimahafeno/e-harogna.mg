@@ -1,0 +1,70 @@
+// Sizes
+
+$tiny-size:   5px;
+$small-size:  10px;
+$medium-size: 20px;
+$large-size:  40px;
+$huge-size:   80px;
+
+.centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.from-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.full-screen-height { height: 100vh; }
+
+/* column size */
+
+.col-4 { width: 40%; }
+.col-5 { width: 50%; }
+.col-10 { width: 100%; }
+
+
+/* containers */
+
+/* Horizontal elements with eqaul space between */
+.spaced-horizontal-elements {
+	display: flex;
+	justify-content: space-between;
+}
+
+.medium-left-right-container {
+	padding-left: var(--medium-size);
+	padding-right: var(--medium-size);
+}
+
+.huge-left-right-container {
+	padding-left: var(--huge-size);
+	padding-right: var(--huge-size);
+}
+
+/* vertical items */
+.small-v-spacing {
+	display: flex;
+	flex-direction: column;
+	gap: var(--small-size);
+}
+
+.medium-v-spacing {
+	display: flex;
+	flex-direction: column;
+	gap: var(--medium-size);
+}
+
+.large-v-spacing {
+	display: flex;
+	flex-direction: column;
+	gap: var(--large-size);
+}
+
+.huge-v-spacing {
+	display: flex;
+	flex-direction: column;
+	gap: var(--huge-size);
+}

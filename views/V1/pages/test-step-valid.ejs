@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs'); %>
+
+	<body>
+        <main class="main inscription">
+            <div class="inscription__left">
+                <div class="inscription__left--icon">
+                    <a href="http://"> <img  class="icon-img" src="images/icons/home.png" alt="home.png"></a>
+                    <a href="http://"> <img class="icon-img" src="images/icons/back.png" alt="back.png""></a>
+                </div>
+                <div class="inscription__left--body">
+                    <span class="body-intro">Votre nouvelle</span>
+                    <h1 class="body-title">Aventure Professionnelle</h1>
+                    <p class="body-subtitle">commence ici</p>
+                    <p class="body-text">Bravo ! Votre compte a été crée ! Suivez des cours, préparer vos questions pour les présentiels, 
+                        trouver un emploi sur Fianarantsoa ou un job en freelance...explorer vite votre compte</p>
+
+                    <button class="body-btn" type="submit">Ouvrir mon compte</button>
+                </div>
+            </div>
+            <div class="inscription__right">
+                <h1 class="inscription__right--title">CREEZ-VOTRE PROFIL</h1>
+                <p class="inscription__right--subtitle">(facultatif)</p>
+                <p class="inscription__right--text">Soucieux de vous trouver un emploi, nous vous invitons à remplir ce formulaire pour vous créer un CV. 
+                    Ainsi, à chaque offre d’emploi qui corresponde à votre profil , on vous enverra une notification.</p>
+                <div class="inscription__body">
+                    <%- include('../molecules/stepper/step-valid.ejs'); %>
+                    
+                </div>
+            </div>
+        </main>
+   
+	</body>
+
+</html>
+
+
+

@@ -1,0 +1,35 @@
+{
+	"icon": "images/icon1.png",
+	"iconAlt": "Icon-metier-web",
+
+	"title": "Le Metier Du Web",
+	"introduction": "Le métier du web offre une multitude d'opportunités, c'est l'occasion de laisser libre cours à votre créativité, de développer des interfaces intuitives et de transformer des idées en réalité virtuelle. Plongez dans ce domaine en constante évolution, où vous pourrez développer des compétences uniques, contribuer à la transformation numérique et façonner l'avenir du web.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/redacteur.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Devenir rédacteur web ",
+			"text": "Découvrez les techniques de rédaction persuasives pour influencer et convaincre votre audience. Apprenez à créer des appels à l'action percutants, à développer des arguments persuasifs et à utiliser des stratégies de storytelling pour donner vie à votre contenu et inciter vos lecteurs à passer à l'action."
+		  },
+		  {
+			"imageUrl": "images/categories/ads.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Campagne de publicité avec Google Ads ",
+			"text": "Développez les compétences nécessaires pour créer des campagnes publicitaires percutantes et génératrices de résultats. Vous serez prêt(e) à atteindre votre public cible, accroître votre visibilité en ligne et maximiser le potentiel de votre entreprise grâce à la puissance de Google Ads. Préparez-vous à dominer le monde de la publicité en ligne et à propulser votre entreprise vers de nouveaux sommets de réussite."
+		  },
+		  {
+			"imageUrl": "images/categories/fb.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Maîtriser Facebook Ads ",
+			"text": "Vous allez apprendre à mesurer et analyser les résultats de vos campagnes publicitaires sur Facebook. Explorez les outils d'analyse et les métriques clés pour évaluer l'efficacité de vos annonces et ajuster votre stratégie en fonction des données. Vous serez prêt(e) à atteindre votre public cible, développer votre visibilité en ligne et obtenir des résultats exceptionnels dans le monde du marketing en ligne."
+		  },
+		  {
+			"imageUrl": "images/categories/SOCIAL MEDIA.png",
+			"imageAlt": "Intersect-1",
+			"title": "Maitriser les Socials Media Analytics ",
+			"text": "Vous allez tirer parti des données des réseaux sociaux et maximiser l'impact de votre présence en ligne. Vous serez prêt(e) à prendre des décisions stratégiques éclairées, à optimiser votre stratégie sur les réseaux sociaux et à atteindre vos objectifs de manière efficace. Préparez-vous à devenir un expert des Social Media Analytics et à dominer le monde des réseaux sociaux avec confiance et succès."
+		  }
+		  
+	]
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in || Sign up from E-haronga</title>
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="css/sigin.css">
+    <style>
+        .alert-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999;
+        }
+
+        .alert {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .alert-danger {
+            background-color: #dc3545;
+        }
+
+        .alert-success {
+            background-color: #28a745;
+
+        }
+        .messageLogin{
+            margin-top:10px ;
+            text-align: center;
+            color: red;
+            font-size: 13px;
+            text-shadow: 5px 0px 5px;
+        }
+        .messageLogin{
+        margin-top:10px ;
+        text-align: center;
+        color: red;
+        font-size: 13px;
+        text-shadow: 5px 0px 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container" id="sign-up-container">
+        
+                <h1>Créer un compte</h1>
+                <span>Ou utilisez votre email pour vous inscrire</span>
+                <div class="infield">
+                    <input type="text" placeholder="Nom" name="firstName" required="required"/>
+                    <label></label>
+                </div>
+                
+                <div class="infield">
+                    <input type="email" placeholder="E-mail" name="email" required="required"/>
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Mots de passe" name="password" required="required"/>
+                    <label></label>
+                </div>
+				<div class="buttons">
+					<button onclick="openTarif()"  id="inscriBtn">S'incrire</button>
+					<div class="button-secondary" id="mobile-sign-in-button">Se connecter</div>
+				</div>
+            </div>
+
+
+        <div class="form-container sign-in-container" id="sign-in-container">
+            <form action="/api/login" method="post" enctype="application/json">
+                <h1>Vos cours vous attendent</h1>
+                <span>Utilisez votre compte</span>
+                <div class="infield">
+                    <input type="email" placeholder="E-mail" name="email"/>
+                    <label></label>
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Mots de passe" name="password" />
+                    <label></label>
+                </div>
+                <a href="#" class="forgot">Mot de passe oublié?</a>
+                <div class="buttons">
+                    <button>Se connecter</button>
+                    <div class="button-secondary" id="mobile-sign-up-button"><a href="">S'inscrire</a></div>
+                </div>
+                <% if (message.success) { %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <%= message.success %>
+                    </div>
+                    <% } else if (message.danger) { %>
+                    <div class="alert alert-danger alert-dismissible fade show messageLogin" role="alert">
+                        <%= message.danger %>
+                    </div>
+                <% } %>
+
+
+                
+
+            </form>
+        </div>
+
+        <div class="overlay-container" id="overlayCon">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <div class="left-icon">
+                        <a href="/"> <img src="images/icons/home.png" alt="home.png"></a>
+                        <a href="http://"> <img src="images/icons/back.png" alt="back.png"></a>
+                    </div>
+                    <h1>E-Harogna !</h1>
+                    <p></p>
+                    <p></p>
+                    <button>&nbsp;&nbsp;&nbsp;&nbsp;Se connecter</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <div class="right-icon">
+                        <a href="/"> <img src="images/icons/home.png" alt="home.png"></a>
+                        <a href="http://"> <img src="images/icons/back.png" alt="back.png"></a>
+                    </div>
+                    <i class="login-icon">
+                        <img src="images/logo_v2.png" alt="logo_v2.png">
+                    </i>
+                    <h1>Tongasoa ô !!!</h1>
+                    <p></p>
+                    <p></p>
+                    <button>Creer un compte</button>
+                </div>
+            </div>
+            <button id="overlayBtn"></button>
+        </div>
+    </div>
+
+    <div class="alert-container" id="alertContainer"></div>
+
+    <!-- js code -->
+    <script>
+        function openTarif() {
+            window.location.href = "/tarifs";
+        }
+        const container = document.getElementById('container');
+        const overlayCon = document.getElementById('overlayCon');
+        const overlayBtn = document.getElementById('overlayBtn');
+
+        overlayBtn.addEventListener('click', () => {
+            container.classList.toggle('right-panel-active');
+        });
+
+        // Connection button clicked in mobile version
+        const mobileConnectionButton = document.getElementById('mobile-sign-in-button');
+        mobileConnectionButton.addEventListener('click', () => {
+            // show sign in and hide sign up
+            const signUpContainer = document.getElementById('sign-up-container');
+            const signInContainer = document.getElementById('sign-in-container');
+            signUpContainer.style.display = "none";
+            signInContainer.style.display = "block";
+        });
+
+        // Sign up button clicked in mobile version
+        const mobileSignUpButton = document.getElementById('mobile-sign-up-button');
+        mobileSignUpButton.addEventListener('click', () => {
+            // show sign in and hide sign up
+            const signInContainer = document.getElementById('sign-in-container');
+            const signUpContainer = document.getElementById('sign-up-container');
+            signInContainer.style.display = "none";
+            signUpContainer.style.display = "block";
+        });
+    </script>
+</body>
+</html>

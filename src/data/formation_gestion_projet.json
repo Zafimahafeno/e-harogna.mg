@@ -1,0 +1,34 @@
+{
+	"icon": "images/categories/cercle-3.png",
+	"iconAlt": "cercle-3.png",
+
+	"title": "Gestion de projet",
+	"introduction": "Devenez un gestionnaire d'entreprise accompli en planifiant, organisant et supervisant chaque étape de vos projets, de la conception à la réalisation. En tant que chef d'orchestre de l'entreprise, vous serez responsable de la coordination des équipes, de la gestion des ressources et du respect des délais. Avec une formation adéquate et une expérience pratique, vous pourrez devenir un expert en gestion de projet et atteindre de nouveaux sommets dans votre carrière d'entreprise.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/image8.png",
+			"imageAlt": "Intersect-1",
+			"title": "Gestion et Management du Projet ",
+			"text": "Devenez un chef d'orchestre qui planifie, organise et supervise chaque étape, du concept à la réalisation. En tant que gestionnaire de projet, vous serez chargé de coordonner les équipes, de gérer les ressources et de respecter les délais. Maîtrisez les outils et les techniques pour atteindre les objectifs fixés et livrer des projets réussis."
+		  },
+		  {
+			"imageUrl": "images/categories/lycs.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Appuie à la création de l’entreprise ",
+			"text": "Vous allez créer et développer votre propre entreprise avec confiance et passion. Vous serez prêt(e) à transformer votre idée en réalité, à surmonter les défis de l'entrepreneuriat et à bâtir une entreprise prospère. Préparez-vous à embrasser l'aventure entrepreneuriale et à construire votre succès entrepreneurial avec détermination et enthousiasme."
+		  },
+		  {
+			"imageUrl": "images/categories/AGILE.png",
+			"imageAlt": "Intersect-1",
+			"title": "Initiation à la méthodologie Agile ",
+			"text": "Vous allez gérer vos projets de manière plus souple, plus collaborative et plus efficace. Soyez prêt(e) à transformer votre approche de la gestion de projet, à favoriser l'innovation et à obtenir des résultats exceptionnels grâce à la méthodologie Agile. Préparez-vous à révolutionner votre façon de gérer vos projets et à stimuler la réussite de vos initiatives avec agilité et enthousiasme."
+		  },
+		  {
+			"imageUrl": "images/categories/assoir.png",
+			"imageAlt": "Intersect-1",
+			"title": "Réussir son étude du marché",
+			"text": "Réduisez les risques d'échec, en vous permettant de prendre les mesures adéquates pour vous implanter durablement sur votre marché et, à plus long terme, de comprendre votre marché, à anticiper les besoins de vos clients et à prendre des décisions stratégiques éclairées pour le succès de votre entreprise."
+		  }
+	]
+}

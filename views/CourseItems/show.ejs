@@ -1,0 +1,27 @@
+<h1>Show CourseItems</h1>
+
+	<p>
+		<strong>Title:</strong>
+		<%= element.Title %>
+	</p>
+	<p>
+		<strong>Photo:</strong>
+		<%= element.Photo %>
+	</p>
+	<p>
+		<strong>Desc:</strong>
+		<%= element.Desc %>
+	</p>
+	<p>
+		<strong>Slug:</strong>
+		<%= element.Slug %>
+	</p>
+	<p>
+		<strong>LongDesc:</strong>
+		<%= element.LongDesc %>
+	</p>
+
+<br>
+<a href="/CourseItems/edit/<%= element.id %>">Edit</a>
+<a href="/CourseItems/create">New</a>
+<a href="/CourseItems">Back</a>

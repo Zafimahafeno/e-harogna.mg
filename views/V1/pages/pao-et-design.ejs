@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/categories/PAO Design.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+           		<p class="title">Les thematiques</p>
+           	</div>
+		</header>
+	
+            <div class="container__skill">
+                <% const bar = {
+                    imageUrl: 'images/icon5.png',
+                    imageAlt: 'icon1.png',
+                    }; %>
+                   
+                <%- include('../molecules/skillbar.ejs', { imageUrl: bar.imageUrl, imageAlt: bar.imageAlt }) %>
+            </div>
+        <main class="main container">
+			<div class="container__intro">
+                <% const cardtext = {
+                    title: 'PAO et Design',
+                    text: "Découvrez le monde incroyablement créatif et innovant de l’édition électronique et du design ! Vous aurez l'opportunité de laisser libre cours à votre créativité et de jouer avec les typographies, les couleurs et les images pour transmettre des messages clairs et esthétiquement plaisants. Votre talent artistique et votre sens de l'esthétique seront valorisés à leur juste mesure."
+                }; %>
+        
+                <%- include('../molecules/cardtext.ejs', {text: cardtext.text, title: cardtext.title}); %>
+            </div>
+            <ul class="container__item">
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl, imageAlt: product.imageAlt, title: product.title, text: product.text }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl1, imageAlt: product.imageAlt1, title: product.title1, text: product.text }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl, imageAlt: product.imageAlt, title: product.title2, text: product.text }) %>
+                </li>
+            </ul>
+            <div class="container__pagination">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

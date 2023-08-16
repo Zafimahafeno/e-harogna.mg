@@ -1,0 +1,126 @@
+<div class="setpthree">
+    <form method="POST" action="/api/saveFormation" class="setpthree-form">
+        <div class="setpthree-form__head">
+            <label for="diplome-niveau-etude" class="head--label">Formation, Diplôme</label>
+            <div class="head--ligne"></div>
+        </div>
+        <div class="inputs">
+            <div class="inputs-1">
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-diplome.png" alt="i-diplome.png">
+                    </i>
+                    <input type="text" id="diplome-niveau-etude" name="diplome" class="form-samll" placeholder="Diplôme / Niveau d’Etude">
+                </div>
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-date.png" alt="i-date.png">
+                    </i>
+                    <input type="text" id="filiere" class="form-control" name="filiere" placeholder="Filière">
+                </div>
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-school.png" alt="i-school.png">
+                    </i>
+                    <input type="text" id="etablissement1" name="etablissement1" class="form-samll" placeholder="Etablissement">
+                </div>
+            </div>
+           
+            <div class="inputs-1">
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-book.png" alt="i-book.png">
+                    </i>
+                    <input type="text" id="formation1" name="form1" class="form-samll" placeholder="Formation 1">
+                </div>
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-school.png" alt="i-school.png">
+                    </i>
+                    <input type="text" id="formation1-etablissement" name="etablissement2" class="form-samll" placeholder="Etablissement 1">
+                </div>   
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-date.png" alt="i-date.png">
+                    </i>
+                    <input type="date" id="formation1-date" name="date1" class="form-samll" placeholder="Date">
+                </div>
+            </div>
+            <div class="inputs-1">
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-book.png" alt="i-book.png">
+                    </i>
+                    <input type="text" id="formation2" name="form2" class="form-samll" placeholder="Formation 2">
+                </div>
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-school.png" alt="i-school.png">
+                    </i>
+                    <input type="text" id="formation2-etablissement" name="etablissement3" class="form-samll" placeholder="Etablissement 2">
+                </div> 
+                <div class="inputs-1__input">
+                    <i class="inputs-1__input--icon">
+                        <img src="images/icons/i-date.png" alt="i-date.png">
+                    </i>
+                    <input type="date" id="formation2-date" name="date2" class="form-samll" placeholder="Date">
+                </div>  
+            </div>
+            <div class="step-btn">
+                
+                <button type="button" id="precedent" value="Précédent" onclick="window.history.back()">Précédent</button>
+                <button type="button" id="ignorer" value="Ignorer">Ignorer</button>
+                <input type="submit" name="suivant" value="Valider" required>
+            </div>
+            
+        </div>
+    </form>
+</div>
+<script>
+    const steptwo = document.querySelector('.steptwo');
+    setTimeout(() => steptwo.classList.add('show'), 50);
+
+</script>
+<style>
+    /* Style for error messages */
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+    /* Style for submit button */
+    .step-btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .step-btn input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .step-btn button{
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .step-btn input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    /* Ajoutez ces styles dans votre fichier CSS */
+    
+    
+    </style>
+    
+

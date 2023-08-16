@@ -1,0 +1,28 @@
+{
+	"icon": "images/categories/cercle-1.png",
+	"iconAlt": "cercle-1.png",
+
+	"title": "Preparer son Embauche",
+	"introduction": "Trouver un emploi peut être une tâche intimidante, mais avec les bonnes compétences, une stratégie efficace et les outils appropriés, vous pouvez mettre toutes les chances de votre côté pour décrocher le poste de vos rêves. Dans ce guide, nous vous fournirons des conseils précieux et des ressources essentielles pour vous aider à préparer votre embauche de manière optimale.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/Intersect-1.png",
+			"imageAlt": "Intersect-1",
+			"title": "Comment créer un CV qui interesse le recruteur ?",
+			"text": "Votre CV est bien plus qu'une simple liste de compétences et d'expériences. C'est votre atout maître, votre carte de visite professionnelle, votre opportunité de briller et de vous démarquer dans la jungle compétitive du marché de l'emploi. Dans cette section exclusive, découvrez les astuces, les stratégies et les techniques éprouvées pour créer un CV qui fera sensation. Préparez-vous à impressionner les recruteurs, à marquer les esprits et à faire la différence lors de votre prochaine candidature."
+		  },
+		  {
+			"imageUrl": "images/categories/entretien2.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Quelle tenue mettre durant un entretien d’embauche ?",
+			"text": "Découvrez les secrets d'une apparence soignée et d'une tenue professionnelle qui reflètent votre confiance, votre style et votre sérieux, pour vous démarquer dès le premier regard lors de votre entretien d'embauche."
+		  },
+		  {
+			"imageUrl": "images/categories/ecrire.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Créer la Lettre de Motivation appropriée à votre candidature",
+			"text": "Une bonne lettre de motivation est essentielle pour attirer l'attention des recruteurs, c’est bien plus qu'un simple document accompagnant votre CV. C'est votre occasion de briller, de captiver les recruteurs et de faire la différence lors de votre candidature. Plongez dans l'art de la rédaction d'une lettre de motivation qui fera vibrer les employeurs et les convaincra de votre adéquation parfaite avec le poste"
+		  }
+	]
+}

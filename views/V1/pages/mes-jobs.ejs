@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs'); %>
+
+<body>
+	<header style="background-image: url('images/offre-emplois-header-bg.jpg')">
+		<%- include('../molecules/header-top.ejs', {current_item: 3}); %>
+
+		<div class="header-main">
+			<p class="title">Mes offres enregistrer</p>
+		</div>
+	</header>
+
+	<main class="main">
+		<div class="large-v-spacing">
+			<%- include('../molecules/tabs.ejs', {current_tab: 2}); %>
+			<div class="main-container offres">
+				<% 
+				if (data?.length==0) { %>
+					<h4>Aucun Emploie enregistrer</h4>
+				<% } else { %>
+					<% data.forEach((item, i)=> { %>
+						<div class="offre">
+							<div class="logo-compagnie" style="background-image: url('<%= item.image %>')"></div>
+							<div class="right">
+								<div class="description">
+									<h1>
+										<%= item.JobTitle %>
+									</h1>
+									<p class="paragrah expand-height">
+										<%= item.title %>
+									</p>
+								</div>
+
+								<div class="buttons">
+									<div>
+										<a class="button-blue" href="#" onclick="enregistrerOffre('<%= item.id %>')">Enregistrer</a>
+									</div>
+									<div>
+										<a class="button-green" href="/job/postuler/<%= item.id %>">postuler</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% }) 
+				}; %>
+			</div>
+		</div>
+	</main>
+
+	<%- include('../molecules/footer.ejs'); %>
+	<script>
+		function enregistrerOffre(offreId) {
+			// Ici, vous pouvez implémenter votre logique pour enregistrer l'offre avec l'ID correspondant.
+			// Vous pouvez utiliser des requêtes AJAX pour envoyer des données au serveur et les stocker dans votre système.
+	
+			// Après avoir enregistré l'offre, vous pouvez rediriger l'utilisateur vers la section "Mes jobs" en utilisant JavaScript :
+			window.location.href = "/mes-jobs"; // Remplacez "/mes-jobs" par l'URL réelle de la section "Mes jobs".
+		}
+	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<div class="">
+  <h1>New CourseChapiter</h1>
+
+  <div class="body">
+    <form class="" action="/CourseChapiter/update" method="post">
+      <input name="id" value="<%= element.id %>" hidden="true" required>
+        <div class="">
+          <label for="">Title</label>
+          <input type="text" name="Title" value="<%= element.Title %>" required="false">
+        </div>
+        <div class="">
+          <label for="">Desc</label>
+          <input type="text" name="Desc" value="<%= element.Desc %>" required="false">
+        </div>
+        <div class="">
+          <label for="">Slug</label>
+          <input type="text" name="Slug" value="<%= element.Slug %>" required="false">
+        </div>
+        <div class="">
+          <label for="">LongDesc</label>
+          <input type="text" name="LongDesc" value="<%= element.LongDesc %>" required="false">
+        </div>
+      <button type="submit">Update CourseChapiter</button>
+    </form>
+    <br />
+    <a href="/CourseChapiter">Index</a>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/header-bg-1.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+				<div class="content">
+					<p class="title">investir <span style="color: #ECE310">en soi</span></p>
+					<p class="sub-title">Apprendre n’importe ou, n’importe quand</p>
+				</div>
+           	</div>
+		</header>
+
+
+		<% 
+	   	const evenements = [
+			{
+				imageUrl: 'images/compte1.png',
+				imageAlt: 'compte1.png',
+				titre: 'Club de langue',
+				sousTitre: 'Français',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+			{
+				imageUrl: 'images/compte2.png',
+				imageAlt: 'compte2.png',
+				titre: 'Club de langue',
+				sousTitre: 'Anglais',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+			{
+				imageUrl: 'images/compte1.png',
+				imageAlt: 'compte1.png',
+				titre: 'Club de langue',
+				sousTitre: 'Français',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+			{
+				imageUrl: 'images/compte1.png',
+				imageAlt: 'compte1.png',
+				titre: 'Club de langue',
+				sousTitre: 'Français',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+			{
+				imageUrl: 'images/compte2.png',
+				imageAlt: 'compte2.png',
+				titre: 'Club de langue',
+				sousTitre: 'Anglais',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+			{
+				imageUrl: 'images/compte1.png',
+				imageAlt: 'compte1.png',
+				titre: 'Club de langue',
+				sousTitre: 'Français',
+				lieu: 'Alliance Française',
+				date: '3 Avril 2023',
+		   },
+		]; 
+		%>
+
+
+		<main class="main compte-annuel">
+
+			<div class="compte-annuel__profil">
+				<%- include('../molecules/compte-annuel-profil.ejs'); %>
+			</div>
+			
+			<%- include('../molecules/compte-annuel-service-vip.ejs'); %>
+			<%- include('../molecules/compte-annuel-content.ejs'); %>
+			<%- include('../molecules/compte-annuel-subtitle.ejs'); %>
+
+			<!-- Evenements -->
+
+			<ul class="compte-annuel__list">
+				<% evenements.forEach( function(evenement) { %>
+
+					<li class="compte-annuel__item">
+						<%- include('../molecules/compte-annuel-card.ejs', { 
+								imageUrl: evenement.imageUrl,
+								imageAlt: evenement.imageAlt,
+								title: evenement.titre, 
+								text: evenement.sousTitre,
+								lieu: evenement.lieu,
+								date: evenement.date 
+						}) %>
+					</li>
+
+				<% }); %>
+			</ul>
+
+		</main>
+		<div class="emptyDivCAV">
+
+		</div>
+		<style>
+			.emptyDivCAV{
+				display:block;
+				width:100%;
+				height:100px;
+			}
+		</style>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

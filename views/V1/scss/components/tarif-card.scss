@@ -1,0 +1,59 @@
+// Method : Desktop first 
+
+.tarif-cards {
+	display: flex;
+	gap: var(--large-size);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.tarif-card {
+	min-width: 350px;
+	width: 350px;
+
+	box-shadow: 0 5px 10px rgba(black, 0.1);
+	border-radius: 20px;
+	padding: var(--large-size);
+
+	@include vertical_items(var(--large-size));
+	align-items: center;
+
+	.cover-image {
+		width: 300px; 
+		height: 300px;
+		background-size: cover;
+	}
+
+	.main {
+		@include centered_vertical_items(var(--medium-size));
+		flex: 1;
+	}
+
+	.description {
+		@include centered_vertical_items(var(--small-size));
+		text-align: center;
+
+		.offre-item {
+			padding: var(--small-size);
+			width: 100%;
+			font-weight: bold;
+		}
+
+		.offre-unavailable { 
+			color: #b0b0b0;
+		}
+	}
+
+
+	// MOBILE
+
+	@media screen and (max-width: 500px) {
+		width: 90%;		
+
+		.cover-image {
+			width: 300px; 
+			height: 300px;
+		}
+	}
+
+}

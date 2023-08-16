@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+
+	<body>
+		<header style="background-image: url('images/nos-coup-de-pouce-header-bg.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: 5}); %>
+
+			<div class="header-main">
+           		<p class="title">Nos coups de pouces</p>
+           	</div>
+		</header>
+
+		<main class="main">
+			<div class="coup-de-pouce">
+				<div class="stage">
+					<div class="content">
+						<div class="intro">
+							<img src="images/stage.png" alt=""/>
+							<p>Laissez nous vous aider à trouver votre prochain 
+								Stage !!! Parmi nos plusieurs collaborateurs 
+								(entreprises , sociétés, établissements publics 
+								ou privés, ... etc ) sur Fianarantsoa ou 
+								ailleurs, il y a forcement une place qui 
+								n’attende que votre premier pas dans le monde 
+								professionnel
+							</p>	
+							<div>
+								<a href="#" class="button-transparent-white" onclick="showInscriptionStage()">
+									S'inscrire
+								</a>
+							</div>
+						</div>
+						
+						<div class="accompagnement">
+							<h1>On accompagne vos premiers pas</h1>
+							<p>Bien conscient de la difficulté des jeunes à trouver des institutions, des entreprises ou société qui pourraient les initier et à les faire entrer dans le monde professionnel, e-Harogna avec son vaste de réseaux de contacts professionnels sur la ville de Fianarantsoa vous accompagne dans votre recherche de stage. Après 8 mois d’abonnement, et de présentiels concernant la thématique de votre choix : notre équipe va faire pour vous une recherche approfondie de stage ou vous proposer auprès de l’un de ses collaborateurs professionnels.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="parrainage">
+					<h1>Notre parrainage pro</h1>
+
+					<div class="content">
+						<img src="images/blue-mentorat 1.png" alt=""/>
+						<p>Premiers pas dans le monde professionnel ? Ou à la recherche de réseautage ou de conseils pratiques pour orienter votre carrière intelligemment ? Des sommités et des acteurs références dans l’environnement entrepreneurial et professionnel de Fianarantsoa se feront un plaisir de vous ouvrir des mentorats et des sessions d’insertions professionnelles.</p>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div id="inscription-stage-container" class="inscription-stage-container">
+			<%- include('../molecules/inscription-stage.ejs'); %>
+		</div>
+
+		<%- include('../molecules/footer.ejs'); %>
+
+		<script>
+			function showInscriptionStage() {
+				document.getElementById("inscription-stage-container").style.display = "block";
+			}
+
+			function hideInscriptionStage() {
+				document.getElementById("inscription-stage-container").style.display = "none";
+			}
+		</script>
+	
+	</body>
+</html>

@@ -1,0 +1,251 @@
+// Method : Desktop first
+
+.inscription {
+
+    display: flex;
+    width: 98vw;
+    font-family: Cario;
+    height: 100vh;
+
+	@media screen and (max-width: $bp-medium) {
+		width: 100%;
+	}
+
+    &__left{
+        width: 25%;
+        height: 100vh;
+        background-image: linear-gradient(
+        to right bottom,
+        rgba(#0F34F9, 0.7),
+        rgba(#0F34F9, 0.8)),
+        url('../../images/create-compte.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+		@media only screen and (max-width: $bp-medium) {
+			display: none;
+		}
+        
+        &--icon{
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        &--body{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            margin-right: 10px;
+            gap: 10px;
+
+ 
+            .body-intro{
+                align-self: center;
+                color: $color-white;
+                font-size: 14px;
+                font-weight: 700;
+
+
+            }
+
+            .body-title{
+                align-self: center;
+                font-size: 30px;
+                font-weight: 900;
+                color: $color-white;
+               
+            }
+
+            .body-subtitle{
+                border-top: 3px $color-white solid;
+                align-self: flex-end;
+                margin-right: 2rem;
+                font-size: 16px;
+                color: $color-yellow;
+                font-weight: 800;
+            }
+
+            .body-text{
+                color: $color-white;
+                font-size: 14px;
+
+            }
+
+            .body-btn{
+                align-self: center;
+                border: 1px $color-bleu solid ;
+                width: 70%;
+                height: 40px;
+                border-radius: 4rem;
+                color: $color-bleu;
+                cursor: pointer;
+                padding: 10px;
+                background-color: rgba($color-white, 0.9);
+                opacity: 0.8;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease-in-out;
+                font-size: 16px;
+                font-weight: 800;
+
+				&:hover {
+					width: 75%;
+					height: 50px;
+					background-color: $color-bleu;
+					color: $color-white;
+		
+				}
+				
+				&:active,
+				&:focus {
+					outline: none;
+					transform: translateY(-1px);
+					box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+				}
+			}
+        }
+    }
+
+
+    &__right{
+		flex: 1;
+		overflow: auto;
+        display: flex;
+        flex-direction: column;
+		padding-top: 1rem;
+
+        /* Personnalisation de la barre de défilement */
+        scrollbar-width: thin;
+        scrollbar-color: #2f2e2e #ffffff;
+
+        /* Styles spécifiques pour WebKit (Chrome, Safari) */
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 5px; /* Définir la hauteur de la barre de défilement */
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #ffffff;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #2f2e2e;
+        }
+        
+
+		@media only screen and (max-width: $bp-medium) {
+			width: 100%;
+			padding: 20px;
+		}
+
+        &--title{
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin-top: 1rem;
+
+        }
+
+        &--subtitle{
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+
+        }
+
+        &--text{
+            width: 65%;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            align-self: center;
+        }
+
+        .inscription__body {
+			box-sizing: border-box;
+            
+            .step {
+				box-sizing: border-box;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+                position: relative;
+
+				.step-content {
+					box-sizing: border-box;
+				}
+
+                .step-btn{
+                    display: flex;
+                    flex-direction: row;
+					justify-content: center;
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+                    gap:2rem;
+
+					@media only screen and (max-width: 400px) {
+						display: flex;	 
+						flex-direction: column;
+						align-items: center;
+					}
+
+                    .next-btn {
+                        background-color: $color-bleu-text;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        width: 175px;
+                    }
+                    .prev-btn {
+                        background-color: $color-bleu-text;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        width: 175px;
+                    }
+                    .finish-btn {
+                        background-color: $color-bleu-text;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        width: 175px;
+                    }
+                }
+            }
+
+        }
+        
+    }
+
+    
+}

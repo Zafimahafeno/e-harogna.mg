@@ -1,0 +1,13 @@
+<div class="new-and-old-prices">
+	<div class="content">
+		<% if (typeof old_price != "undefined") {%>
+			<div class="price old-price">
+				<img class="icon-cross" src="images/icons/red-cross.png" alt=""/>
+				<h3><%= old_price %></h3>	
+			</div>
+		<%}%>
+		<h3 class="price">
+			<%= new_price %>
+		</h3>	
+	</div>
+</div>

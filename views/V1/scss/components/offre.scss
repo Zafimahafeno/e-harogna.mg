@@ -1,0 +1,72 @@
+// Method : Mobile first
+
+.offres {
+	display: flex;
+	flex-direction: column;
+	gap: var(--medium-size);
+	width: 100%;
+}
+
+.offre {
+	display: flex;
+	flex-direction: column;
+	gap: var(--medium-size);
+
+	width: 100%;
+	padding: var(--medium-size);
+	border: 1px solid lightgray;
+	border-radius: 10px;
+
+	@media screen and (min-width: 700px) {
+		flex-direction: row;
+	}
+
+	@media screen and (min-width: 1000px) {
+		width: 900px;
+		margin: auto;
+	}
+
+	.logo-compagnie {
+		display: none;
+
+		@media screen and (min-width: 700px) {
+			display: block;
+			min-width: 130px;
+			height: 130px;
+			background-size: cover;
+			border-radius: 10px;
+		}
+	}
+
+	.right {
+		display: flex;
+		flex-direction: column;
+		gap: var(--medium-size);
+		flex: 1;
+	}
+
+	.description {
+		display: flex;
+		flex-direction: column;
+		gap: var(--small-size);
+		flex: 1;
+	}
+
+	h1 { font-size: 1.5em; }
+
+	.buttons {
+		display: flex;
+		flex-direction: column;
+		gap: var(--small-size);
+
+		@media screen and (min-width: 500px) {
+			flex-direction: row;	
+			justify-content: flex-end;
+
+			div { width: 150px; }
+		}
+	}
+
+	.button { width: 100%; }
+}
+

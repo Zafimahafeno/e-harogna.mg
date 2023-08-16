@@ -1,0 +1,53 @@
+<div class="introduction-pricing">
+	<div class="title">
+		<h1>12 MOIS D’ACCOMPAGNEMENT</h1>
+		<h2>professionnel</h2>
+	</div>
+
+	<div class="main">
+		<div class="bloc-container">
+			<div class="bloc">
+				<ul>
+					<li>
+						<span class="icon-check"></span>
+						Formations et Présentiels en illimité
+					</li>
+					<li>
+						<span class="icon-check"></span>
+						Job Board et Notification “Profil Emploi”
+					</li>
+					<li>
+						<span class="icon-check"></span>
+						Adhésion annuelle gratuit à bibliothèque de 
+						l’Alliance Française
+					</li>
+					<li>
+						<span class="icon-check"></span>
+						Club de Langue
+					</li>
+				</ul>
+
+				<% const old_price="60 000Ar/an" ; const new_price="40 000Ar/an" ; %>
+
+				<div style="color: #5E9DFB">
+					<%- include('new-and-old-price.ejs', { 
+						old_price : old_price, 
+						new_price : new_price 
+					}) %>
+				</div>
+
+				<div class="buttons">
+					<div>
+						<a href="/inscription" class="button-blue">S'inscrire</a>
+					</div>
+					<div>
+						<a href="/tarifs" class="button-transparent">Voir plus</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<img src="assets/images/anna.png" alt=""/>
+	</div>
+
+</div>

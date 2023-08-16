@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<%
+/*
+ * Page contenant la liste des tarifs disponibles
+ */ 
+%>
+
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/header-bg-1.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: 4}); %>
+			<div class="header-main">
+				<p class="title">Nos tarifs</p>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="huge-v-spacing">
+				<div class="centered" style="margin-top: 100px;">
+					<%- include('../molecules/tarif-intro.ejs'); %>
+				</div>
+
+				<div class="tarif-cards">
+                    <% data.tarifs.forEach( function(tarif) {
+                        const new_descriptions = data.descriptions.map(description => {
+                            const is_available = description.available_for.includes(tarif.name);
+                            return { text: description.text, available: is_available };
+                        });
+
+						console.log(new_descriptions);
+                        %>
+
+                        <%- include('../molecules/tarif-card.ejs', {
+                                cover_image : tarif.cover_image,
+                                descriptions : new_descriptions,
+                                old_price : tarif.old_price,
+                                new_price : tarif.new_price,
+                                memberType: tarif.memberType
+                            });
+                        %>
+                    <% }); %>
+                </div>
+
+			</div>
+		</main>
+	<div class="emptyDivTarifs">
+
+
+	</div>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+	<style>
+		.emptyDivTarifs{
+			display:block;
+			width:100%;
+			height:100px;
+		}
+	</style>
+</html>

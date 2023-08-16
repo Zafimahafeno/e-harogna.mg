@@ -1,0 +1,139 @@
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    height: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 100vw;
+        height: 100%;
+    }
+
+    &__btn{
+        color: $color-bleu;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        width: 12rem;
+        padding: 3px;
+        border: 1px $color-bleu solid;
+        border-radius: 2rem;
+        transition: all 0.3s ease-in-out;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 8rem;
+        }
+
+        &:hover {
+            background-color: $color-bleu;
+            color: $color-white;
+            
+        }
+
+        img{
+            margin-left: 1rem;
+            width: 2.5rem;
+            @media only screen and (max-width: $bp-medium) {
+                width: 1.8rem;
+            }
+        }
+
+        span {
+            margin-left: 1rem;
+            font-size: 16px;
+            font-weight: 800;
+            @media only screen and (max-width: $bp-medium) {
+                font-size: 13px;
+                margin-left: -0.5rem;
+                
+            }
+        }
+
+    }
+    &__btn1{
+        color: $color-bleu;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+        width: 12rem;
+        padding: 3px;
+        border: 1px $color-bleu solid;
+        border-radius: 2rem;
+        transition: all 0.3s ease-in-out;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 8rem;
+        }
+
+        &:hover {
+            background-color: $color-bleu;
+            color: $color-white;
+           
+          }
+
+        img{
+            margin-right: 1rem;
+            width: 2.5rem;
+            @media only screen and (max-width: $bp-medium) {
+                width: 1.8rem;
+                margin-left: .5rem;
+            }
+        }
+
+        span {
+            margin-right: 1rem;
+            font-size: 16px;
+            font-weight: 800;
+            @media only screen and (max-width: $bp-medium) {
+                font-size: 13px;
+                margin-right: -0.5rem;
+                
+            }
+        }
+
+    }
+
+    &__pages{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            gap: 0;  
+         }
+        
+
+        .options{
+          border: 1px $color-grey-black solid;
+          border-radius: 50%;
+          height: 13px;
+          padding: 20px;
+          text-align: center;
+
+          @media only screen and (max-width: $bp-small) {
+            display: none;
+            
+        }
+
+          &:hover {
+            border: 1px $color-bleu solid;
+            background-color: $color-bleu;
+            color: $color-white;
+             
+          }
+        }
+    }
+ 
+
+}

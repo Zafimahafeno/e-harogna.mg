@@ -1,0 +1,40 @@
+{
+	"icon": "images/categories/cercle-2.png",
+	"iconAlt": "cercle-2.png",
+
+	"title": "Soft Skill",
+	"introduction": "Pour réussir dans votre carrière, il est crucial de maîtriser l'art de la communication. C’est la clé pour établir des relations solides et transmettre vos idées avec succès. Nos programmes en compétence relationnelle sont conçus pour vous fournir les outils et techniques nécessaires pour améliorer vos compétences tant à l'oral qu'à l'écrit. Préparez-vous à briller dans votre carrière grâce à une communication claire et convaincante!",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/image7.png",
+			"imageAlt": "Intersect-1",
+			"title": "Gérer son temps efficacement ",
+			"text": "Optez pour une gestion efficace du temps, boostez votre productivité et trouvez l'équilibre travail-vie grâce à des stratégies, astuces et outils. Transformez votre façon de travailler et exploitez tout votre potentiel."
+		  },
+		  {
+			"imageUrl": "images/categories/image10.png",
+			"imageAlt": "Intersect-1",
+			"title": "Leadership dans votre quotidien ",
+			"text": "Découvrez les secrets du leadership inspirant et apprenez à exercer une influence positive dans votre vie professionnelle. Développez les compétences, les qualités et la vision nécessaires pour devenir un leader charismatique et accompli."
+		  },
+		  {
+			"imageUrl": "images/categories/image1.png",
+			"imageAlt": "Intersect-1",
+			"title": "Résilience au travail ",
+			"text": "Explorez des stratégies pour maintenir votre motivation à long terme et renforcer votre résilience tout au long de votre carrière. Découvrez comment fixer des objectifs inspirants, cultiver votre passion pour votre travail et trouver un sens profond dans ce que vous faites."
+		  },
+		  {
+			"imageUrl": "images/categories/capture10.PNG",
+			"imageAlt": "Intersect-1",
+			"title": "La prise de parole en public ",
+			"text": "La prise de parole en public est bien plus qu'un simple exercice de communication. C'est une compétence cruciale pour réussir dans de nombreux domaines, que ce soit lors de présentations professionnelles, de discours inspirants ou de négociations importantes. Nous vous dévoilons les techniques éprouvées pour surmonter le trac, gagner en confiance et captiver votre auditoire dès les premières secondes."
+		  },
+		  {
+			"imageUrl": "images/categories/travail équipe (2).jpg",
+			"imageAlt": "travail équipe (2)",
+			"title": "Savoir travailler en équipe ",
+			"text": " Vous développerez les compétences essentielles pour collaborer de manière exceptionnelle avec vos collègues. Vous serez prêt(e) à construire des relations solides, à exploiter la diversité, à favoriser la créativité et à surmonter les défis pour atteindre des succès remarquables en équipe."
+		  }
+	]
+}

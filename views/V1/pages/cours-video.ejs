@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/cours/cours.png')">
+			<%- include('../molecules/header-top.ejs', {current_item: 1}); %>
+
+			<div class="header-main">
+				<h1 class="title">Devenir Community Management</h1>
+           	</div>
+		</header>
+
+            <div class="cours">
+                <div class="cours__left">
+                    <div class="cours__left--item">
+                        <h3 class="cours__left--subtitle">
+                            Chapitre 2 : Lorem ipsum dolor
+                        </h3>
+                        <p class="cours__left--text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div class="cours__left--section">
+                        <h3 class="cours__left--numero">
+                            1. Lorem ipsum dolor
+                        </h3>
+                        <p class="cours__left--text-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+    
+                    <div class="cours__left--sous">
+                        <h3 class="cours__left--sousnumero">
+                            a. Lorem ipsum dolor
+                        </h3>
+                        <p class="cours__left--text-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <div class="video--view">
+                            <a href="#" class="video--icon">
+                                <img src="images/cours/video.png" alt="video.png">
+                            </a>
+                            <button class="video--play">
+                                <img src="images/cours/play.png" alt="play.png" >
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="cours__left--sous">
+                        <h3 class="cours__left--sousnumero">
+                            b. Lorem ipsum dolor
+                        </h3>
+                        <p class="cours__left--text-1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="cours__right">
+                    <%- include('../molecules/cours-rigtht-section.ejs'); %>
+                </div>
+            </div>
+    
+            <div class="pagination-1">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+        
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

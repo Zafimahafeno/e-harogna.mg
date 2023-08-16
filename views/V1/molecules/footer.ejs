@@ -1,0 +1,68 @@
+<div id="don-component-container" class="don-component-container">
+	<%- include("../molecules/don.ejs") %>
+</div>
+
+
+<footer>
+	<div class="footer-don">
+		<div>
+			<h1>Nous faire un</h1>
+			<a class="button-white" href="#" onclick="showDonComponent()">
+				Don
+			</a>	
+		</div>
+		<div class="line"></div>
+		<p>Soutenez nos efforts pour le Developpement de Fianarantsoa 
+			et l’employabilité de ses jeunes Ce n’est pas qu’une question 
+			d’argent, cela commence par un clic.
+		</p>
+	</div>
+
+	<div class="footer-sections">
+		<div class="footer-section">
+			<h2>Navigation sur le site</h2>
+			<ul>
+				<li><a href="#">Retour en Haut de la Page</a></li>
+				<li><a href="#">Page d’Accueil</a></li>
+				<li><a href="#">Nous Contacter</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-section">
+			<h2>Informationns Générales sur le Site</h2>
+			<ul>
+				<li><a href="#">Mentions Legales</a></li>
+				<li><a href="#">Plan du Site</a></li>
+				<li><a href="#">Données personnelles et coockies</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-section">
+			<h2>Adresse</h2>
+			<ul>
+				<li><a href="#">BLOC SCA CCO Porte 05 ISAHA</a></li>
+				<li><a href="#">Fianarantsoa</a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="footer-bottom">
+		<p class="paragraph">© 2023. Tous droits reservés || E-HAROGNA</p>
+		<div>
+			<a href="#">Conditions Générales d’Utilisations</a>	
+		</div>
+	</div>
+</footer>
+
+
+<script>
+	function showDonComponent() {
+		document.getElementById("don-component-container").style.display = "block";
+	}
+
+	function hideDonComponent() {
+		document.getElementById("don-component-container").style.display = "none";
+	}
+</script>
+	

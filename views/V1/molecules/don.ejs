@@ -1,0 +1,52 @@
+<div class="don">
+	<div class="content large-v-spacing">
+		<div class="head medium-v-spacing centered">
+			<img src="images/love_icon_2.png" alt=""/>
+			<h1 class="title">Je fais un don</h1>
+		</div>
+
+		<form action="#" method="" class="large-v-spacing col-10">
+			<div class="medium-v-spacing">
+				<input type="text" name="nom" placeholder="Nom et prenom" />
+				<input type="text" name="mail" placeholder="Mail"/>
+				<input type="text" name="telephone" placeholder="Téléphone"/>
+
+				<div class="types">
+					<div class="radio">
+						<input type="radio" 
+							name="type" 
+							value="don_mobilier"
+							id="don_mobilier"
+						/>
+						<label for="don_mobilier">Mobilier</label>
+					</div>
+					<div class="radio">
+						<input type="radio" 
+							name="type" 
+							value="don_numeraire"
+							id="don_numeraire"
+						/>
+						<label for="don_numeraire">Numéraire</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="medium-v-spacing">
+				<div class="buttons">
+					<input class="col-10 button-blue" 
+						type="submit" 
+						name="submit" 
+						value="Faire un don"
+					/>
+
+					<button class="col-10 button-transparent" onclick="hideDonComponent()">
+						Annuler
+					</button>
+				</div>
+
+				<p class="centered-text remerciement">e-harogna vous remercie pour le soutien 
+				que vous apportez. Notre équipe vous contactera de suite</p>
+			</div>
+		</form>
+	</div>		
+</div>

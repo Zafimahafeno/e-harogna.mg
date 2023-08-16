@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+	
+	<div class="background-body">
+		<header style="background-image: url('images/formation-header-bg.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: 2}); %>
+
+			<div class="header-main">
+				<p class="title">Nos formations</p>
+			</div>
+
+			<div class="formation__top">
+				<% const titre = {
+					title: 'Les thematiques',
+				}; %>
+				<%- include('../molecules/button-title.ejs', {title: titre.title}); %>
+			</div>
+
+		</header>
+		<!-- data card -->
+		<% const card1 = {
+			imageUrl: 'images/icon3.png',
+			imageAlt: 'icon3.png',
+			title: 'Preparer son',
+			title1: 'Embauche',
+			text: "Nous vous aidons à vous préparer minutieusement pour impressionner les employeurs potentiels et décrocher le poste de vos rêves."
+		}; %>
+
+		<% const card2 = {
+			imageUrl: 'images/icon2.png',
+			imageAlt: 'icon2.png',
+			title: 'Soft',
+			title1: 'Skills',
+			text: "Développez vos compétences non techniques avec nos formations pour réussir votre parcours professionnel : communication, résolution de problèmes et esprit d'équipe"
+		}; %>
+
+		<% const card3 = {
+			imageUrl: 'images/icon1.png',
+			imageAlt: 'icon1.png',
+			title: 'Les metiers',
+			title1: 'du Web',
+			text: "Plongez dans le monde passionnant des métiers du web avec nos formations et ressources exclusives."
+		}; %>
+
+		<% const card4 = {
+			imageUrl: 'images/icon4.png',
+			imageAlt: 'icon4.png',
+			title: 'Gestion ',
+			title1: 'de Projet',
+			text: "Transformez votre vision en réalité. Nos formations sont  conçues pour vous aider à acquérir les compétences indispensables pour mener vos projets vers le succès."
+		}; %>
+
+		<% const card5 = {
+			imageUrl: 'images/icon5.png',
+			imageAlt: 'icon5.png',
+			title: 'P.A.O et ',
+			title1: 'Design',
+			text: "Nos formations de pointe et notre expertise vous permettront de maîtriser Photoshop, Illustrator et InDesign, et de réussir dans le domaine du design."
+		}; %>
+
+		<% const card6 = {
+			imageUrl: 'images/icon6.png',
+			imageAlt: 'icon6.png',
+			title: 'Bureautique',
+			title1: '',
+			text: "Développez des compétences pour booster votre carrière en explorant une grande variété d'outils bureautiques grâce à nos formations de pointe."
+		}; %>
+
+		<% const card7 = {
+			imageUrl: 'images/icon7.png',
+			imageAlt: 'icon7.png',
+			title: 'Autres',
+			title1: '',
+			text: "Nos formations sont adaptées à diverses professions .Avancez d'un pas dans votre carrière professionnelle"
+		}; %>
+		<!-- en data card -->
+
+
+		<main class="main main-formation">
+			
+			<div class="main-formation__intro">
+				<% const cardtext = {
+					title: '',
+					text: 'L’équipe pédagogique d’e-Harogna ne cesse de vous concocter la crème de la crème des formations en ligne pour vous assurer des bases solides de compétences professionnelles Des ajouts de cours quotidiens vont alimenter notre palette de formations. Que ce soit des découvertes ou pour votre employabilité.'
+				}; %>
+				<%- include('../molecules/cardtext.ejs', {text: cardtext.text, title: ''}); %>
+			</div>
+			<ul class="main-formation__list">
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card1.ejs', { imageUrl: card1.imageUrl, imageAlt: card1.imageAlt,title: card1.title ,title1: card1.title1, text: card1.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card2.ejs', { imageUrl: card2.imageUrl, imageAlt: card2.imageAlt,title: card2.title ,title1: card2.title1, text: card2.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card3.ejs', { imageUrl: card3.imageUrl, imageAlt: card3.imageAlt,title: card3.title ,title1: card3.title1, text: card3.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card4.ejs', { imageUrl: card4.imageUrl, imageAlt: card4.imageAlt,title: card4.title ,title1: card4.title1, text: card4.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card5.ejs', { imageUrl: card5.imageUrl, imageAlt: card5.imageAlt,title: card5.title ,title1: card5.title1, text: card5.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card6.ejs', { imageUrl: card6.imageUrl, imageAlt: card6.imageAlt,title: card6.title ,title1: card6.title1, text: card6.text  }); %>
+				</li>
+				<li class="main-formation__item">
+					<%- include('../molecules/card/card7.ejs', { imageUrl: card7.imageUrl, imageAlt: card7.imageAlt,title: card7.title ,title1: card7.title1, text: card7.text  }); %>
+				</li>
+			</ul>
+		</main>
+	</div>
+	<div class="emptyDivFormation">
+
+	</div>
+		
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+	<style>
+		.emptyDivFormation{
+			display: block;
+			width:100%;
+			height:50px;
+		}
+	</style>
+</html>

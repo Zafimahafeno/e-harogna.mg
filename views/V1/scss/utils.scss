@@ -1,0 +1,22 @@
+/* DEBUGING */
+
+.border-red { border: 1px solid red; }
+.border-green { border: 1px solid green; }
+.debug-red { background:red; }
+.debug-green { background: green; }
+.debug-white { background: white; }
+
+.square { 
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+
+
+/* il fault que le parent 
+ * utilise du flex */
+.expand-height { flex: 1; }
+.expand { flex: 1; }
+
+.hidden { display: none; }
+

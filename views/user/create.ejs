@@ -1,0 +1,40 @@
+<%- include('../layouts/header') -%>
+	<%- include('../layouts/adminLayouts') %>
+		<div class="app-wrapper">
+			<div class="app-content pt-3 p-md-3 p-lg-4">
+				<div class="container-xl">
+					<h1 class="app-page-title mb-0">Creation d'un utilisateur</h1>
+					<hr class="mb-4">
+					<div class="g-4 settings-section">
+						<form class="settings-form row" action="/api/users" method="post" enctype="multipart/form-data">
+							<div class="col-12">
+								<div class="app-card app-card-settings shadow-sm p-4">
+									<div class="app-card-body">
+										<div class="mb-3">
+											<label for="exampleFormControlInput1" class="form-label">email de
+												l'Utilisateur</label>
+											<input type="email" class="form-control" id="exampleFormControlInput1"
+												name="email" placeholder="jone.doe@gmail.com">
+										</div>
+										<div class="mb-3">
+											<label for="exampleFormControlInput1" class="form-label">Role de
+												l'utitlisateur</label>
+											<select class="form-select form-control" name="roleId">
+												<option selected value="">choisisser</option>
+												<% data.forEach((item, i)=> { %>
+													<option value="<%= item.id %>">
+														<%= item.name %>
+													</option>
+													<% }) %>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="btn app-btn-primary btn-lg btn-block mt-4">Enregistrer</button>
+						</form>
+					</div>
+				</div><!--//container-fluid-->
+			</div>
+		</div>
+		<%- include('../layouts/footer') -%>

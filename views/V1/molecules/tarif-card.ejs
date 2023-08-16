@@ -1,0 +1,41 @@
+<% 
+/*
+ * Affiche les informations concernant un tarif 
+ *
+ * Entrées : 
+ * - cover_image : image illustrant le tarif
+ * - descriptions : un tableau avec des objets contenant les descriptions de ce tarif
+ *   -- text : texte descriptif
+ *   -- available : définit si cette entrée est disponible ou non
+ * - old_price : ancien prix 
+ * - new_price : nouveau prix
+ * - memberType : le type d'abonnement de l'utilisateur
+ */
+%>
+
+<div class="tarif-card">
+	<div class="cover-image" style="background-image: url('<%= cover_image %>')">
+	</div>
+
+	<div class="main">
+		<ul class="description">
+			<% descriptions.forEach(function(description) { %>
+				<li class="<%= description.available == false ? 
+					'offre-item offre-unavailable' : 'offre-item' %>">
+
+					<%= description.text %>
+				</li>
+			<% }); %>
+		</ul>
+
+		<%- include('new-and-old-price.ejs', { 
+			old_price : old_price, 
+			new_price : new_price 
+		})%>
+
+	</div>
+
+	<div>
+		<a href="/inscription2?type=<%= memberType %>" class="button-transparent">S'abonner</a>
+	</div>
+</div>

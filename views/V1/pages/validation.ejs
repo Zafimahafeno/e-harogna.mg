@@ -1,0 +1,30 @@
+<div id="alert-box" class="alert-box">
+    <span id="alert-message" class="alert-message"></span>
+</div>
+<style>
+    .alert-box {
+  display: none;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.alert-message {
+  font-size: 16px;
+}
+</style>
+<script>
+    function showAlert(message) {
+  var alertBox = document.getElementById("alert-box");
+  var alertMessage = document.getElementById("alert-message");
+
+  alertMessage.textContent = message;
+  alertBox.style.display = "block";
+
+  setTimeout(function() {
+    alertBox.style.display = "none";
+  }, 3000); // Masquer l'alerte après 3 secondes (3000 millisecondes)
+}
+
+</script>

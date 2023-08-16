@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+
+	<body style="" class="test-component">
+		<div style="background-color: #161616">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+		</div>
+
+		<%- include('../molecules/tags.ejs') %>
+		<%- include('../molecules/inscription-stage.ejs') %>
+
+	
+		<div class="input-text-container">
+			<h1>Input text</h1>
+			<p>Parent</p>		
+			<p>L'input occupera tous les width disponibles dans le parent.</p>
+			<input type="text" value="Lorem ipsum" class="input-text"/>
+		</div>
+
+		<%- include("../molecules/don.ejs") %>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<div class="offre">
+	<div class="logo-compagnie" style="background-image: url('<%= logo_compagnie %>')"></div>
+	<div class="right">
+		<div class="description">
+			<h1>
+				<%= titre %>
+			</h1>
+			<p class="paragrah expand-height">
+				<%= description %>
+			</p>
+			<!-- <p class="paragrah expand-height"><%- description %></p> -->
+		</div>
+
+		<div class="buttons">
+			<div>
+				<a class="button-blue" href="#">Enregistrer</a>
+			</div>
+			<!-- <a class="button-green" href="#">postuler</a> -->
+			<div>
+				<a class="button-green" href="/job/postuler/<%= id %>">postuler</a>
+			</div>
+		</div>
+	</div>
+</div>

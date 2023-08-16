@@ -1,0 +1,57 @@
+{
+    "cv": {
+        "id": 2,
+        "civility": "Mr",
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "25/03/1998",
+        "adress": "Andrainjato Fianarantsoa",
+        "phoneNumber": "0320200222",
+        "professionalExperiences": [
+            {
+                "title": "dev-front",
+                "startDate": "02/12/2009",
+                "endDate": "02/12/2012",
+                "companyName": "telma",
+                "currentlyHeld": false,
+                "descrition": "Developper frontend"
+            },
+            {
+                "title": "dev-backend",
+                "startDate": "08/01/2013",
+                "endDate": "02/12/2018",
+                "companyName": "telma",
+                "currentlyHeld": false,
+                "descrition": "Developper backend"
+            }
+        ],
+        "formations": [
+            {
+                "title": "dev-backend",
+                "date": "08/01/2000",
+                "institution": "Telma",
+                "descrition": "Developper backend"
+            },
+            {
+                "title": "dev-mobile",
+                "date": "08/01/2002",
+                "institution": "Telma",
+                "descrition": "Developper mobile"
+            }
+        ],
+        "graduations": [
+            {
+                "title": "Licence",
+                "date": "08/01/2018",
+                "institution": "ISSTM",
+                "sector": "Computer Sciences"
+            },
+            {
+                "title": "Master",
+                "date": "08/01/2020",
+                "institution": "EMIT",
+                "sector": "Computer Sciences"
+            }
+        ]
+    }
+}

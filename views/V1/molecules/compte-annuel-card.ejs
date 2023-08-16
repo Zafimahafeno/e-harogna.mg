@@ -1,0 +1,26 @@
+<div class="compte-card">
+	<div class="compte-card__img">
+		<img src="<%= imageUrl %>" alt="<%= imageAlt %>" />
+	</div>
+	<div class="compte-card__body">
+		<h3 class="compte-card__body--titre"><%= title %></h3>
+		<p class="compte-card__body--text"><%= text %></p>
+		<ul class="compte-card__body--list">
+			<li class="compte-card__body--item">Lieu: <%= lieu %></li>
+			<li class="compte-card__body--item">Date: <%= date %></li>
+		</ul>
+		<button class="compte-card__body--btn">Je participe gratuitement</button>
+	</div>
+</div>
+<script>
+	const buttons = document.querySelectorAll('.compte-card__body--btn');
+	buttons.forEach(function(button) {
+		button.addEventListener('click', () => {
+			const destinataire = 'zanajaona2404@gmail.com';
+			const sujet = "Inscription à l'événement";
+			const corps = "Je souhaite participer à l'événement club de langue.";
+			const mailtoUrl = `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+			window.open(mailtoUrl);
+		});
+	});
+</script>

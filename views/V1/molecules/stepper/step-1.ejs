@@ -1,0 +1,212 @@
+<div class="stepone">
+    <form method="POST" action="/api/register" class="stepone-form">
+        <fieldset>
+            <div class="stepone-form__head">
+                <label for="" class="head--label">Etat Civil</label>
+               
+                <div class="head--ligne"></div>
+                
+             </div>
+            <div class="stepone-form__all">
+                <div class="stepone-form__column">
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Nom">
+                            <img src="images/icons/i-name.png" alt="login-1.png">
+                        </i>
+                        <input type="text" id="firstName" name="firstName" placeholder="Nom" required>
+                        <div class="error-message" id="errorFirstName"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Prénom">
+                            <img src="images/icons/i-user.png" alt="i-user.png">
+                        </i>
+                        <input type="text" id="lastName" name="lastName" placeholder="Prénom" required>
+                        <div class="error-message" id="errorLastName"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Date de naissance">
+                            <img src="images/icons/i-date.png" alt="i-date.png">
+                        </i>
+                        <input type="date" id="birthDate" name="birthDate" placeholder="Date de naissance" required>
+                        <div class="error-message" id="errorBirthDate"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Mot de passe">
+                            <img src="images/icons/i-home.png" alt="i-home.png">
+                        </i>
+                        <input type="text" id="adress" name="password" placeholder="Mot de passe" required>
+                        <div class="error-message" id="errorpassword"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <select id="userType" name="userType">
+                            <option value="">Choix d'abonnement</option>
+                            <option value="memberMonthly">Membre Mensuel</option>
+                            <option value="memberYearly">Membre Annuel</option>
+                            <option value="memberVIP">Membre Elite VIP</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="stepone-form__column">
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="E-mail">
+                            <img src="images/icons/i-mail.png" alt="i-mail.png">
+                        </i>
+                        <input type="text" id="email" name="email" placeholder="E-mail" required>
+                        <div class="error-message" id="errorEmail"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Téléphone">
+                            <img src="images/icons/i-tel.png" alt="i-tel.png">
+                        </i>
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Téléphone" required>
+                        <div class="error-message" id="errorPhoneNumber"></div>
+                    </div>
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Adresse">
+                            <img src="images/icons/i-home.png" alt="i-home.png">
+                        </i>
+                        <input type="text" id="adress" name="adress" placeholder="Adresse" required>
+                        <div class="error-message" id="errorAdress"></div>
+                    </div>
+                    
+                    <div class="stepone-form__input">
+                        <i class="stepone-form__input--icon" aria-label="Mot de passe">
+                            <img src="images/icons/i-home.png" alt="i-home.png">
+                        </i>
+                        <input type="text" id="adress" name="confirmPassword" placeholder="Confirme Mot de passe" required>
+                        <div class="error-message" id="errorpassword"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="step-btn">
+                <input type="submit" name=""Value="Suivant" required>
+            </div>
+            
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const birthDate = document.getElementById("birthDate").value;
+        const email = document.getElementById("email").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const adress = document.getElementById("adress").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const role = document.getElementById("usertype").value;
+
+
+        let isValid = true;
+
+        if (firstName.trim() === "") {
+            document.getElementById("errorFirstName").innerText = "Le champ Nom est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorFirstName").innerText = "";
+        }
+
+        if (lastName.trim() === "") {
+            document.getElementById("errorLastName").innerText = "Le champ Prénom est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorLastName").innerText = "";
+        }
+
+        if (birthDate.trim() === "") {
+            document.getElementById("errorBirthDate").innerText = "Le champ Date de naissance est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorBirthDate").innerText = "";
+        }
+
+        if (email.trim() === "") {
+            document.getElementById("errorEmail").innerText = "Le champ E-mail est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorEmail").innerText = "";
+        }
+
+        if (phoneNumber.trim() === "") {
+            document.getElementById("errorPhoneNumber").innerText = "Le champ Téléphone est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorPhoneNumber").innerText = "";
+        }
+
+        if (adress.trim() === "") {
+            document.getElementById("errorAdress").innerText = "Le champ Adresse est requis";
+            isValid = false;
+        } else {
+            document.getElementById("errorAdress").innerText = "";
+        }
+
+        return isValid;
+    }
+    // Gérer la soumission du formulaire lorsqu'un utilisateur clique sur le bouton "Suivant"
+    document.querySelector(".steptwo-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Empêcher la soumission du formulaire par défaut
+            const formIsValid = validateForm();
+
+            if (formIsValid) {
+                // Soumettre le formulaire si la validation est réussie
+                this.submit();
+            }
+        });
+</script>
+<style>
+/* Style for error messages */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Style for submit button */
+.step-btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.step-btn input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.step-btn input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Ajoutez ces styles dans votre fichier CSS */
+/* Style for select input */
+.stepone-form__input select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.stepone-form__input select:hover,
+.stepone-form__input select:focus {
+    border-color: #007bff;
+}
+
+/* Style for select options */
+.stepone-form__input select option {
+    padding: 10px;
+}
+
+
+</style>

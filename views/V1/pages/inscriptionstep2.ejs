@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs'); %>
+
+	<body>
+        <main class="inscription">
+            <div class="inscription__left">
+                <div class="inscription__left--icon">
+                    <a href="/"> <img  class="icon-img" src="images/icons/home.png" alt="home.png"></a>
+                    <a href="/"> <img class="icon-img" src="images/icons/back.png" alt="back.png""></a>
+                </div>
+                <div class="inscription__left--body">
+                    <span class="body-intro">Votre nouvelle</span>
+                    <h1 class="body-title">Aventure Professionnelle</h1>
+                    <p class="body-subtitle">commence ici</p>
+                    <p class="body-text">Bravo ! Votre compte a été crée ! Suivez des cours, préparer vos questions pour les présentiels, 
+                        trouver un emploi sur Fianarantsoa ou un job en freelance...explorer vite votre compte</p>
+                </div>
+            </div>
+            <div class="inscription__right">
+                <h1 class="inscription__right--title">CREEZ-VOTRE PROFIL</h1>
+                <p class="inscription__right--subtitle">(facultatif)</p>
+                <p class="inscription__right--text">Soucieux de vous trouver un emploi, nous vous invitons à remplir ce formulaire pour vous créer un CV. 
+                    Ainsi, à chaque offre d’emploi qui corresponde à votre profil , on vous enverra une notification.</p>
+                <div class="inscription__body">
+                    <div class="step">
+                        <div class="step-content">
+                            <%- include('../molecules/stepper/step-2.ejs'); %>
+                        </div>
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </main>
+    <script>
+            const steps = document.querySelectorAll('.step');
+            const prevBtns = document.querySelectorAll('.prev-btn');
+            const nextBtns = document.querySelectorAll('.next-btn');
+            const finishBtn = document.querySelector('.finish-btn');
+            
+
+            let currentStep = 0;
+
+            const updateStep = () => {
+            steps.forEach((step, index) => {
+                if (index === currentStep) {
+                step.classList.add('active');
+                } else {
+                step.classList.remove('active');
+                }
+            });
+            
+            prevBtns.forEach(btn => btn.disabled = currentStep === 0);
+            
+            if (currentStep === steps.length - 1) {
+                nextBtns.forEach(btn => btn.style.display = 'none');
+                finishBtn.style.display = 'inline-block';
+            } else {
+                nextBtns.forEach(btn => btn.style.display = 'inline-block');
+                finishBtn.style.display = 'none';
+            }
+            };
+
+            prevBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentStep--;
+                updateStep();
+            });
+            });
+
+            nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentStep++;
+                updateStep();
+            });
+            });
+
+            updateStep();  
+
+    </script>
+	</body>
+
+</html>
+
+
+

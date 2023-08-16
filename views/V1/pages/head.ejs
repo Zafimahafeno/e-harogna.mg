@@ -1,0 +1,19 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script>
+	function menu_clicked() {
+	  var x = document.getElementById("menu-items");
+	  if (x.className === "second-part") {
+		x.className += " hidden";
+		console.log(x.className);
+	  } else {
+		x.className = "second-part";
+		console.log(x.className);
+	  }
+	}
+	</script>	
+</head>

@@ -1,0 +1,135 @@
+/* 
+Methode : Mobile First 
+*/
+
+@import 'mixins';
+@import 'reset';
+@import 'atomes';
+@import 'layouts';
+@import 'utils';
+@import 'button';
+
+@import 'components/header-top';
+@import 'components/tags';
+@import 'components/about-e-harogna';
+@import 'components/hianatra-sy-hiasa';
+@import 'components/coup-de-pouce';
+@import 'components/offre';
+@import 'components/tarif-card';
+@import 'components/tarif-intro';
+@import 'components/new-and-old-price';
+@import 'components/tabs';
+@import 'components/page-main-title';
+@import 'components/inscription-stage';
+@import 'components/service';
+@import 'components/ateliers-et-presentiels';
+
+// home page
+@import 'components/introduction-pricing';
+
+// footer
+@import 'components/footer';
+@import 'components/don';
+@import 'components/footer-don';
+
+
+
+/* CUSTOMS */
+
+@font-face {
+  font-family: "cairo-regular";
+  src: url("cairo/Cairo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "cairo-bold";
+  src: url("cairo/Cairo-Bold.ttf");
+}
+
+@font-face {
+  font-family: "AnandaBlack";
+  src: url("AnandaBlack-regular.ttf");
+}
+
+@font-face {
+  font-family: "AgencyFB";
+  src: url("AgencyFB-Bold.ttf");
+}
+
+:root {
+	--color-blue1: #5BBAFF;
+	--color-blue2: #5E9DFB;
+	--color-green1: #39F528;
+	
+    --tiny-size:   5px;
+    --small-size:  10px;
+    --medium-size: 20px;
+    --large-size:  40px;
+    --huge-size:   80px;
+}
+
+
+.main-container { 
+	box-sizing: border-box;
+	padding: var(--large-size); 
+	margin-bottom: var(--huge-size);
+}
+
+.title { font-size: 2em; text-align: center; }
+.sub-title { font-size: 1.5em; text-align: center; }
+.centered-text { text-align: center; }
+
+
+
+header { 
+	position: relative; 
+	@include vertical_items;
+	background-size: cover;
+	background-position: center center;
+
+	height: 100vh;
+	width: 100%;
+}
+
+.header-base { 
+	height: 100vh; 
+	width: 100%;
+	border: 1px solid red;
+	background-size: cover; 
+}
+
+
+.header-main {
+
+	@include vertical_items;
+	@include centered;
+	flex: 1;
+
+	font-family: "cairo-bold", sans-serif;
+	color: white;
+	text-align: center;
+	font-size: 0.8em;
+
+	.title { font-size: 5em; }
+
+	.sub-title { font-size: 1.5em; text-align: center; }
+}
+
+.e-harogna-title-in-image img { width: 100%; }
+
+
+
+
+
+@media screen and (min-width: 700px) {
+	.header-main {
+		font-size: 1em;
+	}
+}
+
+
+@media screen and (min-width: 1000px) {
+	.main-container { 
+		padding: var(--huge-size);
+	}
+}

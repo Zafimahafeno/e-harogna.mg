@@ -1,0 +1,292 @@
+ /* Styles généraux */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.stepone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.stepone-form {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 2560px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    animation: slideIn 0.5s;
+    box-shadow: 0 0 10px black;
+    margin-left:650px;
+}
+
+.head--label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.head--ligne {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+
+.stepone-form__input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stepone-form__input--icon {
+    margin-right: 10px;
+}
+
+.stepone-form__input--icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.stepone-form__input input[type="text"],
+.stepone-form__input input[type="date"],
+.stepone-form__input input[type="password"],
+.stepone-form__input select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    background-color: white;
+}
+
+.stepone-form__input input[type="text"]:focus,
+.stepone-form__input input[type="date"]:focus,
+.stepone-form__input input[type="password"]:focus,
+.stepone-form__input select:focus {
+    outline: none;
+    border-color: #5E9FFF;
+}
+
+.stepone-form__input select {
+    appearance: none;
+    background-image: url("images/icons/down-arrow.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+/* Boutons */
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Image */
+.image-left {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 290px;
+    transform: translateY(-50%);
+    padding: 0;
+}
+
+.image-left img {
+    width: 100%;
+    max-height: 683px;
+    box-shadow: 0 0 10px black;
+}
+
+/* Custom select */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.select-selected::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active::after {
+    border-color: transparent transparent #ffffff transparent;
+    top: 7px;
+}
+
+.select-items div {
+    color: #4CAF50;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.select-items div:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div.select-hide {
+    display: block;
+}
+
+/* Media Queries */
+/* Styles pour les écrans jusqu'à 1499px */
+@media screen and (max-width: 1499px) {
+    .stepone-form {
+        width: 600px;
+        -ms-grid-row-align: center;
+    }
+
+    .image-left {
+        position: absolute;
+        top: 50%;
+        left: 350px;
+        transform: translateY(-50%);
+        padding: 0;
+    }
+    .image-left img {
+        width: 300px;
+        height: 700px;
+        box-shadow: 0 0 10px black;
+    }
+}
+
+/* Styles pour les écrans jusqu'à 991px (tablettes en mode paysage et écrans plus petits) */
+@media screen and (max-width: 991px) {
+    .stepone-form {
+        width: 100%;
+    }
+
+    /* Cacher l'image pour une meilleure utilisation de l'espace */
+    .image-left {
+        display: none;
+    }
+    
+    /* Ajuster la taille du texte pour une meilleure lisibilité */
+    .form-label, .form-control {
+        font-size: 14px;
+    }
+}
+
+/* Styles pour les écrans jusqu'à 767px (tablettes en mode portrait et smartphones) */
+@media screen and (max-width: 767px) {
+    .stepone-form {
+        width: 100%;
+    }
+
+    /* Centrer le formulaire et ajuster la marge pour une meilleure apparence */
+    .stepone-form {
+        margin: 20px auto;
+    }
+    
+    /* Ajuster la taille du texte pour une meilleure lisibilité */
+    .form-label, .form-control {
+        font-size: 12px;
+    }
+    
+    /* Ajuster la taille du bouton pour une meilleure expérience tactile */
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Styles généraux pour le formulaire d'inscription */
+.stepone-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Styles généraux pour l'image à gauche du formulaire */
+.image-left {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Styles pour les étiquettes du formulaire */
+.form-label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Styles pour les champs de saisie du formulaire */
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Styles pour le bouton de soumission du formulaire */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,41 @@
+name: CI/CD tasks
+on:
+    push:
+        branches: [dev]
+jobs:
+    build:
+        runs-on: Ubuntu-22.04
+        
+        steps:
+            - name: Deploy app to server using ssh
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: 22
+                  script: |
+                      if [ -d ~/www/e-harogna.mg/ ]; then
+                          echo "==> Repository exists. Performing git pull..."
+                          cd ~/www/e-harogna.mg/
+                          git pull origin dev
+                      else
+                          echo "==> Repository does not exist. Cloning the repository..."
+                          mkdir -p ~/www/e-harogna.mg/
+                          cd ~/www/e-harogna.mg/
+                          git clone git@github.com:FandresenaJasmin/e-harogna.git .
+                          cp ~/www/.env/.env .
+                      fi
+                      echo "==> Running the rest of commands..."
+                      git checkout dev
+                      git status
+
+                      if [[ "$(docker images -q e-harognamg-web:latest 2> /dev/null)" == "" ]]; then
+                        echo "==> Image does not exist. Skipping the Docker image removal..."
+                      else
+                        echo "==> Image exists. Removing the Docker image..."
+                        docker compose down
+                        docker rmi e-harognamg-web
+                      fi
+                      echo "==> Up containers..."
+                      docker compose up -d

@@ -1,0 +1,13 @@
+
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__item{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}

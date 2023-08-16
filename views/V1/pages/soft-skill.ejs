@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+        <!-- For Data -->
+        <% const product = {
+            imageUrl: 'images/categories/skill-1.png',
+            imageAlt: 'Intersect-1',
+            title: 'Leadership dans votre quotidien professionnel',
+            text: "Découvrez les secrets du leadership inspirant et apprenez à exercer une influence positive dans votre vie professionnelle. Développez les compétences, les qualités et la vision nécessaires pour devenir un leader charismatique et accompli.",
+            imageUrl1: 'images/categories/skill-2.png',
+            imageAlt1: 'Intersect-1',
+            title1: 'La Gestion du temps au travail',
+            text1: "Optez pour une maîtrise totale de votre temps et augmentez votre productivité au travail grâce aux clés d'une gestion efficace. Plongez dans les stratégies, astuces et outils qui vous permettront d'optimiser votre emploi du temps, d'atteindre vos objectifs et de trouver un équilibre harmonieux entre votre vie professionnelle et personnelle. Préparez-vous à transformer votre façon de travailler et à exploiter tout votre potentiel.",
+            imageUrl2: 'images/categories/Intersect-2.png',
+            imageAlt2: 'Intersect-1',
+            title2: 'La prise de parole en public',
+            text2: "La prise de parole en public est bien plus qu'un simple exercice de communication. C'est une compétence cruciale pour réussir dans de nombreux domaines, que ce soit lors de présentations professionnelles, de discours inspirants ou de négociations importantes. Nous vous dévoilons les techniques éprouvées pour surmonter le trac, gagner en confiance et captiver votre auditoire dès les premières secondes."
+        }; %>
+
+		<header style="background-image: url('images/categories/wallpapersden2.png')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+           		<p class="title">Les thematiques</p>
+           	</div>
+		</header>
+	
+            <div class="container__skill">
+                <% const bar = {
+                    imageUrl: 'images/categories/cercle-2.png',
+                    imageAlt: 'cercle-2.png',
+                    }; %>
+                   
+                <%- include('../molecules/skillbar.ejs', { imageUrl: bar.imageUrl, imageAlt: bar.imageAlt }) %>
+            </div>
+        <main class="main container">
+			<div class="container__intro">
+                <% const cardtext = {
+                    title: 'Soft Skill',
+                    text: "Pour réussir dans votre carrière, il est crucial de maîtriser l'art de la communication. C’est la clé pour établir des relations solides et transmettre vos idées avec succès. Nos programmes en compétence relationnelle sont conçus pour vous fournir les outils et techniques nécessaires pour améliorer vos compétences tant à l'oral qu'à l'écrit. Préparez-vous à briller dans votre carrière grâce à une communication claire et convaincante!"
+                }; %>
+        
+                <%- include('../molecules/cardtext.ejs', {text: cardtext.text, title: cardtext.title}); %>
+            </div>
+            <ul class="container__item">
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl, imageAlt: product.imageAlt, title: product.title, text: product.text }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl1, imageAlt: product.imageAlt1, title: product.title1, text: product.text1 }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl2, imageAlt: product.imageAlt2, title: product.title2, text: product.text2 }) %>
+                </li>
+            </ul>
+            <div class="container__pagination">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

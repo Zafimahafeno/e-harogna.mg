@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+        <!-- For Data -->
+
+		<header style="background-image: url('images/categories/wallpapersden1.png')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+           		<p class="title">Les thematiques</p>
+           	</div>
+		</header>
+	
+            <div class="container__skill">
+                <% const bar = {
+						imageUrl: 'images/categories/cercle-1.png',
+						imageAlt: 'cercle-1.png',
+				};%>
+                   
+                <%- include('../molecules/skillbar.ejs', { 
+					imageUrl: bar.imageUrl, 
+					imageAlt: bar.imageAlt 
+				}) %>
+            </div>
+
+        <main class="main container">
+			<div class="container__intro">
+                <% const cardtext = {
+                    title: title,
+                    text: text 
+                }; %>
+        
+                <%- include('../molecules/cardtext.ejs', {text: cardtext.text, title: cardtext.title}); %>
+            </div>
+            <ul class="container__item">
+				<% products.forEach( function(product) { %>
+					<li class="container__list">
+						<%- include('../molecules/item.ejs', { 
+								imageUrl: product.imageUrl, 
+								imageAlt: product.imageAlt, 
+								title: product.title, 
+								text: product.text 
+						}) %>
+					</li>
+				<% }); %>
+            </ul>
+            <div class="container__pagination">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+		</main>
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

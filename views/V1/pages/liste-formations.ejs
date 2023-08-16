@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/categories/lycs.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+           		<p class="title">Les thematiques</p>
+           	</div>
+		</header>
+	
+            <div class="container__skill">
+                <%- include('../molecules/skillbar.ejs', { 
+					imageUrl: formation.icon, 
+					imageAlt: formation.iconAlt 
+				}) %>
+            </div>
+
+        <main class="main container">
+			<div class="container__intro">
+                <%- include('../molecules/cardtext.ejs', {
+					title: formation.title, 
+					text: formation.introduction
+				}); %>
+            </div>
+            <ul class="container__item">
+				<% formation.items.forEach( function(item) { %>
+					<li class="container__list">
+						<%- include('../molecules/item.ejs', { 
+								imageUrl: item.imageUrl, 
+								imageAlt: item.imageAlt, 
+								title: item.title, 
+								text: item.text 
+						}) %>
+					</li>
+				<% }); %>
+            </ul>
+            <div class="container__pagination">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!--<div class="main-container hianatra-sy-hiasa larg
+    e-v-spacing centered">-->
+    <div class="main-container hianatra-sy-hiasa  ">
+
+       
+        <h1 class="compte-service__titre">
+            Bienvenu dans ton espace
+        </h1>
+
+        <div class="compte-video">
+            <div id="player"></div>
+          </div>
+          
+          <div class="compte-video">
+            <div id="player"></div>
+          </div>
+          
+          <div class="compte-video">
+            <div id="player"></div>
+          </div>
+          
+          <script src="https://www.youtube.com/iframe_api"></script>
+          <script>
+            // Créer et initialiser le lecteur
+            function onYouTubeIframeAPIReady() {
+              const videoId = '';
+              const player = new YT.Player('player', {
+                videoId: videoId,
+                width: 800,
+                height: 450,
+                playerVars: {
+                  modestbranding: 1, // Masquer le logo YouTube
+                  showinfo: 0, // Ne pas afficher les informations de la vidéo
+                  controls: 0, // Masquer les contrôles de lecture
+                },
+              });
+          
+              // Obtenir l'URL de la vidéo sur Google Drive
+              const driveUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+          
+              // Mettre à jour la source du lecteur avec l'URL de la vidéo sur Google Drive
+              player.getIframe().setAttribute('src', driveUrl);
+            }
+          </script>
+          
+          
+          
+                   
+          
+    
+        <p class="paragraph">Pour dynamiser la potentialité professionnelle des abonnés, E-harogna propose 
+            des cours et des formations en ligne et en présentiel. Le tout, complémentaire 
+            et régulier, mais surtout, conçu et basé sur des approches qui reflètent 
+            le plus les réalités du monde du travail.
+        </p>
+    
+        <div class="services">
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/job.png', 
+                    title: "Offre d'emplois", 
+                    link: "/emplois"
+            }) %>
+    
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/atelier.png', 
+                    title: "Ateliers et Presentiels", 
+                    link: "/ateliers-et-presentiels"
+            }) %>
+    
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/formation-en-ligne.png', 
+                    title: "Formations en ligne", 
+                    link: "/formations"
+            }) %>
+        </div>
+    
+    </div>
+    

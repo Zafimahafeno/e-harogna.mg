@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs'); %>
+
+	<body>
+		<header style="background-image: url('images/offre-emplois-header-bg.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: 3}); %>
+
+				<div class="header-main">
+					<p class="title">Nos offres d'emploi</p>
+				</div>
+		</header>
+
+		<main class="main">
+			<div class="large-v-spacing">
+				<%- include('../molecules/tabs.ejs', {current_tab: 2}); %>
+				<div class="main-container offres">
+					<% 
+						if (data?.length==0) { %>
+							<h4>Aucun Emploie disponible</h4>
+						<% } else { %>
+							<% data.forEach((item, i)=> { %>
+								<%- include('../molecules/offre.ejs', { 
+									logo_compagnie: item.image, 
+									titre: item.JobTitle, 
+									description: item.title,
+									id:item.id 
+							});%>
+						<% }) 
+					}; %>
+				</div>
+			</div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+
+</html>

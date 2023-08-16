@@ -1,0 +1,11 @@
+.test-component {
+	.input-text-container {
+		border: 1px solid black;
+		width: 400px;
+		padding: 20px;
+
+		.input-text {
+			@include input-text;
+		}
+	}
+}

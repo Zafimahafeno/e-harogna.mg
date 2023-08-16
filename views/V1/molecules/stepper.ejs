@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include('head.ejs'); %>
+
+	<body>
+        <div class="stepper">
+            <div class="step active">
+              <div class="step-header">
+                <div class="step-title">Step 1</div>
+              </div>
+              <div class="step-body">
+                <p>Step 1 content goes here</p>
+                <button class="next-btn">Next</button>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-header">
+                <div class="step-title">Step 2</div>
+              </div>
+              <div class="step-body">
+                <p>Step 2 content goes here</p>
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-header">
+                <div class="step-title">Step 3</div>
+              </div>
+              <div class="step-body">
+                <p>Step 3 content goes here</p>
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-header">
+                <div class="step-title">Step 4</div>
+              </div>
+              <div class="step-body">
+                <p>Step 4 content goes here</p>
+                <button class="prev-btn">Previous</button>
+                <button class="finish-btn">Finish</button>
+              </div>
+            </div>
+          </div>
+          
+
+        <script>
+                const steps = document.querySelectorAll('.step');
+                const prevBtns = document.querySelectorAll('.prev-btn');
+                const nextBtns = document.querySelectorAll('.next-btn');
+                const finishBtn = document.querySelector('.finish-btn');
+
+                let currentStep = 0;
+
+                const updateStep = () => {
+                steps.forEach((step, index) => {
+                    if (index === currentStep) {
+                    step.classList.add('active');
+                    } else {
+                    step.classList.remove('active');
+                    }
+                });
+                
+                prevBtns.forEach(btn => btn.disabled = currentStep === 0);
+                
+                if (currentStep === steps.length - 1) {
+                    nextBtns.forEach(btn => btn.style.display = 'none');
+                    finishBtn.style.display = 'inline-block';
+                } else {
+                    nextBtns.forEach(btn => btn.style.display = 'inline-block');
+                    finishBtn.style.display = 'none';
+                }
+                };
+
+                prevBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentStep--;
+                    updateStep();
+                });
+                });
+
+                nextBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentStep++;
+                    updateStep();
+                });
+                });
+
+                finishBtn.addEventListener('click', () => {
+                alert('Inscription terminée avec succès !');
+                });
+
+                updateStep();  
+
+        </script>
+	</body>
+
+</html>
+
+
+

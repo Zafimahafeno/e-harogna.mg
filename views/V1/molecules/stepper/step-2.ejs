@@ -1,0 +1,103 @@
+<div class="steptwo">
+    <form method="POST" action="/api/saveProfessionalExperience" class="steptwo-form">
+        <div class="steptwo-form__head">
+           <label for="" class="head--label">Expérience professionnelle</label>
+          
+           <div class="head--ligne"></div>
+           
+        </div>
+        <div class="steptwo-form__all">
+            <div class="steptow-job">
+                <p class="steptow-job__name">Job 1</p>
+                <div class="steptow-job__input">
+                    <input type="text"  class="form-control" name="titrepost1" placeholder="Titre du poste occupé">
+                    <input type="date"  class="form-small" name="debutpost1" placeholder="Debut">
+                    <input type="date"  class="form-small" name="finpost1" placeholder="fin">
+                    <div class="form-check">
+                        <input type="checkbox" id="status-post1" name="en-cours-post1" />
+                        <label for="status-post1">En cours</label>
+                    </div>
+                </div>
+                <div class="steptow-job__text">
+                    <input type="text" class="form-control" placeholder="Description du poste" name="descriptionpost1">
+                    <br><input type="text" class="form-control" placeholder="Nom de votre Societe/Entreprise" name="companyname1">
+                </div>
+            </div>
+            <div class="steptow-job">
+                <p class="steptow-job__name">Job 2</p>
+                <div class="steptow-job__input">
+
+                    <input type="text"  class="form-control" name="titrepost2" placeholder="Titre du poste occupé">
+                    <input type="date"  class="form-small" name="debutpost2" placeholder="Debut">
+                    <input type="date"  class="form-small" name="finpost2" placeholder="fin">
+
+                    <div class="form-check">
+                        <input type="checkbox" id="status-post2" name="en-cours-post2" />
+                        <label for="status-post2">En cours</label>
+                    </div>
+                </div>
+                <div class="steptow-job__text">
+                    <input type="text" class="form-control" placeholder="Description du poste" name="descriptionpost2">
+                    <br><input type="text" class="form-control" placeholder="Nom de votre Societe/Entreprise" name="companyname2">
+                </div>
+            </div>   
+            <div class="step-btn">
+                <input type="submit" name="suivant" value="Suivant" required>
+                <button type="button" id="precedent" value="Précédent" onclick="window.history.back()">Précédent</button>
+                <button type="button" id="ignorer" value="Ignorer">Ignorer</button>
+            </div>
+            
+        </div>    
+    </form>
+</div>
+<script>
+    const steptwo = document.querySelector('.steptwo');
+    setTimeout(() => steptwo.classList.add('show'), 50);
+    document.getElementById("ignorer").addEventListener("click", function() {
+        // Rediriger l'utilisateur vers l'étape suivante
+        window.location.href = "./inscriptionstep3";
+    });
+
+</script>
+<style>
+    /* Style for error messages */
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+    /* Style for submit button */
+    .step-btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .step-btn input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .step-btn button{
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .step-btn input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    /* Ajoutez ces styles dans votre fichier CSS */
+    
+    
+    </style>
+    

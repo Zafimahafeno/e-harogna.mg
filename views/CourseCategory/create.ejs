@@ -1,0 +1,48 @@
+<%- include('../layouts/header') -%>
+    <%- include('../layouts/adminLayouts') %>
+	<script src="/assets/ckeditor/ckeditor.js"></script>
+    <div class="app-wrapper">
+        <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    <h1 class="app-page-title mb-0">Creation d'un Categorie</h1>
+				<hr class="mb-4">
+				<div class="g-4 settings-section">
+					
+					<form class="settings-form row" action="/api/category/create"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+					<div class="col-12 col-md-4">
+						<h3 class="section-title">Details Generale</h3>
+						<div class="section-intro">Ici vous entrer les details generale a propos du cours.</div>
+					</div>
+
+					<div class="col-12 col-md-8">
+						<div class="app-card app-card-settings shadow-sm p-4">
+							<div class="app-card-body">
+									<div class="mb-3">
+										<label for="exampleFormControlInput1" class="form-label">Titre du Cours</label>
+										<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="cecie est un cours">
+									  </div>
+									  <div class="mb-3">
+										<label for="formFile" class="form-label">Photo de Couverture</label>
+										<br>
+										<input class="form-control-file" type="file" id="formFile">
+									  </div>
+							</div>
+						</div>
+					</div>
+					<div class="mb-3 mt-3 col-12 col-md-12">
+						<h3 class="section-title">details</h3>
+						<br>
+						<textarea class="form-control" id="ck" rows="10" ></textarea>
+					  </div>
+
+					<button type="submit" class="btn app-btn-primary btn-lg btn-block mt-4" >Enregistrer</button>
+				</form>
+				</div>
+		    </div><!--//container-fluid-->
+        </div>
+		<script type="text/javascript">CKEDITOR.replace( 'ck' );</script>
+    </div>
+<%- include('../layouts/footer') -%>

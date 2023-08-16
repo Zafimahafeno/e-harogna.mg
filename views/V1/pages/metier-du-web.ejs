@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+        <!-- For Data -->
+        <% const product = {
+            imageUrl: 'images/categories/Intersect-2.png',
+            imageAlt: 'Intersect-1',
+            title: 'Gestion De Projet',
+            text: "Devenez un chef d'orchestre qui planifie, organise et supervise chaque étape, du concept à la réalisation. En tant que gestionnaire de projet, vous serez chargé de coordonner les équipes, de gérer les ressources et de respecter les délais. Maîtrisez les outils et les techniques pour atteindre les objectifs fixés et livrer des projets réussis.",
+            imageUrl1: 'images/categories/skill-1.png',
+            imageAlt1: 'Intersect-1',
+            title1: 'Quelle tenue mettre durant un entretien d’embauche ?',
+            text1: "",
+            imageUrl2: 'images/categories/Intersect-1.png',
+            imageAlt2: 'Intersect-1',
+            title2: 'Créer la Lettre de Motivation appropriée à votre candidature',
+            text2: ""
+        }; %>
+
+
+		<header style="background-image: url('images/categories/wallpapersden3.jpg')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="main header-main">
+           		<p class="title">Les thematiques</p>
+           	</div>
+		</header>
+	
+            <div class="container__skill">
+                <% const bar = {
+                    imageUrl: 'images/icon1.png',
+                    imageAlt: 'icon1.png',
+                    }; %>
+                   
+                <%- include('../molecules/skillbar.ejs', { imageUrl: bar.imageUrl, imageAlt: bar.imageAlt }) %>
+            </div>
+        <main class="container">
+			<div class="container__intro">
+                <% const cardtext = {
+                    title: 'Le metier du web',
+                    text: "Le métier du web offre une multitude d'opportunités, c'est l'occasion de laisser libre cours à votre créativité, de développer des interfaces intuitives et de transformer des idées en réalité virtuelle. Plongez dans ce domaine en constante évolution, où vous pourrez développer des compétences uniques, contribuer à la transformation numérique et façonner l'avenir du web."
+                }; %>
+        
+                <%- include('../molecules/cardtext.ejs', {text: cardtext.text, title: cardtext.title}); %>
+            </div>
+            <ul class="container__item">
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl, imageAlt: product.imageAlt, title: product.title, text: product.text }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl1, imageAlt: product.imageAlt1, title: product.title1, text1: product.text1 }) %>
+                </li>
+                <li class="container__list">
+                    <%- include('../molecules/item.ejs', { imageUrl: product.imageUrl, imageAlt: product.imageAlt, title: product.title2, text2: product.text2 }) %>
+                </li>
+            </ul>
+            <div class="container__pagination">
+                <%- include('../molecules/pagination.ejs'); %>
+            </div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

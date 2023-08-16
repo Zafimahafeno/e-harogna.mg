@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+	<meta name="google-site-verification" content="QyiplwFd5P0owOatWcF94OMZkRHATq9ySEUYEA9z6Uc" />
+	<title>E-HAROGNA BY ORIGAMI-TECH</title>
+</head>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="position: relative;">
+			<div style="background-color: #161616">
+				<%- include('../molecules/header-top.ejs', {current_item: 1}); %>
+			</div>
+		
+			<div class="header-main_h ">
+				<div class="slider-container">
+					<div id="slide_1" class="slide">
+						<div class="slide-content">
+							<p class="title">investir <span style="color: #ECE310">en soi</span></p>
+					        <p class="sub-title">Apprendre n’importe ou, n’importe quand</p>
+						</div>
+					</div>
+		
+					<div id="slide_2" class="slide">
+						<div class="slide-content">
+							<p class="title">investir<span style="color: #ECE310"> en soi</span></p>
+					        <p class="sub-title">Apprendre n’importe ou, n’importe quand</p>  
+						</div>
+					</div>
+		
+					<div id="slide_3" class="slide">
+						<div class="slide-content">
+							<p class="title">investir<span style="color: #ECE310"> en soi</span></p>
+					        <p class="sub-title">Apprendre n’importe ou, n’importe quand</p>
+						</div>
+					</div>
+				</div>
+
+				<button onclick="previousSlide_h()" class="prev-slide"> <img src="images/icons/arrow-l.png" alt="arrow-l.png"></button>
+				<button onclick="nextSlide_h()" class="next-slide"><img src="images/icons/arrow-r.png" alt="arrow-r.png"></button>
+
+				
+			</div>
+		</header>
+		
+<script>
+	const slideItems_h = document.querySelectorAll('.slider-container .slide');
+
+	// Définir l'index de la diapositive actuelle
+	let currentSlideIndex_h = 0;
+
+	// Définir la direction du défilement (1 pour aller vers l'avant, -1 pour revenir en arrière)
+	let scrollDirection_h = 1;
+
+	// Fonction pour faire défiler vers la diapositive suivante
+	function scrollToNextSlide_h() {
+	currentSlideIndex_h += scrollDirection_h;
+
+	// Vérifier si la diapositive actuelle est la première ou la dernière
+	if (currentSlideIndex_h < 0) {
+		currentSlideIndex_h = 1; // Aller à la deuxième diapositive
+		scrollDirection_h = 1; // Changer la direction du défilement pour aller vers l'avant
+	} else if (currentSlideIndex_h >= slideItems_h.length) {
+		currentSlideIndex_h = slideItems_h.length - 2; // Aller à l'avant-dernière diapositive
+		scrollDirection_h = -1; // Changer la direction du défilement pour revenir en arrière
+	}
+
+	const scrollLeftValue = currentSlideIndex_h * slideItems_h[0].offsetWidth;
+	document.querySelector('.slider-container').scrollTo({
+		left: scrollLeftValue,
+		behavior: 'smooth'
+	});
+	}
+
+	function startSlide_h() {
+	slideInterval_h = setInterval(scrollToNextSlide_h, 2000);
+	}
+
+	function stopSlide_h() {
+	clearInterval(slideInterval_h);
+
+	// Récupérer la position actuelle de la diapositive en cours de défilement
+	const currentPosition = currentSlideIndex_h * slideItems_h[0].offsetWidth;
+
+	document.querySelector('.slider-container').scrollTo({
+		left: currentPosition,
+		behavior: 'smooth'
+	});
+	}
+
+	function nextSlide_h() {
+	stopSlide_h();
+	currentSlideIndex_h++;
+	if (currentSlideIndex_h >= slideItems_h.length) {
+		currentSlideIndex_h = 0; // Revenir au premier slide
+	}
+	const scrollLeftValue = currentSlideIndex_h * slideItems_h[0].offsetWidth;
+	document.querySelector('.slider-container').scrollTo({
+		left: scrollLeftValue,
+		behavior: 'smooth'
+	});
+	}
+
+	function previousSlide_h() {
+	stopSlide_h();
+	currentSlideIndex_h--;
+	if (currentSlideIndex_h < 0) {
+		currentSlideIndex_h = slideItems_h.length - 1; // Revenir au dernier slide
+	}
+	const scrollLeftValue = currentSlideIndex_h * slideItems_h[0].offsetWidth;
+	document.querySelector('.slider-container').scrollTo({
+		left: scrollLeftValue,
+		behavior: 'smooth'
+	});
+	}
+
+	startSlide_h();
+	
+</script>
+	
+		<main class="main">
+			<%- include('../molecules/about-e-harogna.ejs'); %>
+			<%- include('../molecules/hianatra-sy-hiasa.ejs'); %>
+			<%- include('../molecules/home-component.ejs'); %>
+			<%- include('../molecules/introduction-pricing.ejs'); %>
+			<%- include('../pages/slide.ejs'); %>
+		</main>
+	<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

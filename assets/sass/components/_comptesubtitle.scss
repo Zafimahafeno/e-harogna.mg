@@ -1,0 +1,46 @@
+.compte-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    position: relative;
+
+    margin-top: 6rem;
+
+    &__img{
+        
+        img{
+            width: 500px;
+
+            @media only screen and (max-width: $bp-medium) {
+                width: 350px;
+                
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                width: 280px;
+                
+            }
+        }
+    }
+
+    &__text{
+        position: absolute;
+        margin-top: -1rem;
+        font-family: Cario;
+        font-size: 32px;
+        color: $color-bleu-text;
+        font-weight: 800;
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 26px;
+            
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 24px;
+            
+        }
+    }
+}

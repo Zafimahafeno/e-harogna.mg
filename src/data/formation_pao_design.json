@@ -1,0 +1,34 @@
+{
+	"icon": "images/icon5.png",
+	"iconAlt": "icon formation pao et design",
+
+	"title": "PAO et Design",
+	"introduction": "Découvrez le monde incroyablement créatif et innovant de l’édition électronique et du design ! Vous aurez l'opportunité de laisser libre cours à votre créativité et de jouer avec les typographies, les couleurs et les images pour transmettre des messages clairs et esthétiquement plaisants. Votre talent artistique et votre sens de l'esthétique seront valorisés à leur juste mesure.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/image5.png",
+			"imageAlt": "Intersect-1",
+			"title": "Apprendre Gimp",
+			"text": "Vous allez sublimer vos photos, créer des compositions artistiques et développer vos compétences en graphisme, GIMP sera votre outil de prédilection. Préparez-vous à explorer un monde de possibilités créatives, à exprimer votre vision artistique et à créer des œuvres visuelles époustouflantes grâce à GIMP."
+		  },
+		  {
+			"imageUrl": "images/categories/image6.png",
+			"imageAlt": "Intersect-1",
+			"title": "Créer des visuels avec Illustrator ",
+			"text": "Donner vie à votre imagination et créer des visuels époustouflants. Que vous souhaitiez concevoir des illustrations, des logos, des infographies ou des éléments graphiques, Illustrator sera votre outil de prédilection. Explorez votre créativité, et exprimez votre style unique pour captiver les regards et transmettez votre message avec impact grâce à Illustrator."			
+		  },
+		  {
+			"imageUrl": "images/categories/image11.png",
+			"imageAlt": "Intersect-1",
+			"title": "Initiation au Design Thinking ",
+			"text": "Souhaiteriez-vous améliorer votre entreprise? Vous avez besoin de libérer votre potentiel créatif et résoudre les problèmes de manière innovante. Et, aussi d’adopter une approche centrée sur l'utilisateur et de générer des solutions pertinentes et impactantes. "
+		  },
+		  {
+			"imageUrl": "images/categories/image12.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Les bases de Photoshop ",
+			"text": "Maîtriser l'art de la retouche photo et de la création graphique. Vous allez développer des possibilités créatives infinies de Photoshop pour la création graphique et la manipulation d'images. Apprenez à utiliser les pinceaux, les formes personnalisées, les filtres artistiques et les effets de texte pour créer des compositions uniques, des logos accrocheurs et des designs originaux."
+		  }
+	]
+}

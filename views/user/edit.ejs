@@ -1,0 +1,36 @@
+<div class="">
+  <h1>Update Users</h1>
+
+  <div class="body">
+    <form class="" action="/api/users/edit" method="post">
+      <input name="id" value="<%= element.id %>" hidden="true" required>
+        <div class="">
+          <label for="">Nom</label>
+          <input type="text" name="firtsName" value="<%= element.firstName %>" required="false">
+        </div>
+        <div class="">
+          <label for="">Prenom</label>
+          <input type="text" name="lastName" value="<%= element.lastName %>" required="false">
+        </div>
+        <div class="">
+          <label for="">Contact</label>
+          <input type="text" name="phoneNumber" value="<%= element.phoneNumber %>" required="false">
+        </div>
+        <div class="">
+          <label for="">WhatWillLearn</label>
+          <input type="text" name="WhatWillLearn" value="<%= element.WhatWillLearn %>" required="false">
+        </div>
+        <div class="">
+          <label for="">Slug</label>
+          <input type="text" name="Slug" value="<%= element.Slug %>" required="false">
+        </div>
+        <div class="">
+          <label for="">LongDesc</label>
+          <input type="text" name="LongDesc" value="<%= element.LongDesc %>" required="false">
+        </div>
+      <button type="submit">Update Course</button>
+    </form>
+    <br />
+    <a href="/Course">Index</a>
+  </div>
+</div>

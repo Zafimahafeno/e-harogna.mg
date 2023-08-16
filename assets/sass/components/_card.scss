@@ -1,0 +1,167 @@
+.border-card{
+    .card {
+        width: 20rem;
+        height: 15rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+       }
+      
+        .card-icon {
+          margin-top: -2rem;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 50px;
+    
+          img {
+            width: 5rem;
+            
+          }
+      
+        }
+      
+        .card-content {
+          padding: 20px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 100%;
+
+          a {
+            text-decoration: none;
+            color: $color-white;
+          }
+
+          &__text{
+            min-height: 80%;
+            .text-title {
+                margin: 1rem;
+                font-weight: 900;
+                text-transform:capitalize;
+                font-size: 20px;
+                font-family: Cairo;
+                color: $color-black;
+
+                span{
+                    text-decoration: underline;
+                    text-underline-position: under;
+                    text-decoration-color: $color-grey-black;
+                    text-decoration-thickness: 2px; 
+                    text-decoration-style: solid; 
+                }
+            }
+            .text-content{
+                font-family: Cairo;
+                color: $color-black;
+                font-size: 14px;
+                margin-top: 2rem;
+                text-align: justify;
+                line-height: 1.5;
+               
+            }
+          }
+      
+          .btn-bleu{
+            align-self: center;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 8rem;
+            margin-bottom: 1rem;
+
+        
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+
+          .btn-green{
+            align-self: center;
+            background-color: #006A6B;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 8rem;
+            margin-bottom: 1rem;
+
+        
+            &:hover {
+              background-color: #054142;
+            }
+          }
+          .btn-yellow{
+            align-self: center;
+            background-color: #FDC613;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 8rem;
+            margin-bottom: 1rem;
+
+        
+            &:hover {
+              background-color: #c69a08;
+            }
+          }
+          .btn-pink{
+            align-self: center;
+            background-color: #E781AE;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 8rem;
+            margin-bottom: 1rem;
+
+
+        
+            &:hover {
+              background-color: #f14590;
+            }
+          }
+
+          .btn-orange{
+            align-self: center;
+            background-color: #FD4E26;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 8rem;
+            margin-bottom: 1rem;
+
+        
+            &:hover {
+              background-color: #db310b;
+            }
+          }
+        }
+      }
+      
+}

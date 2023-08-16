@@ -1,0 +1,135 @@
+.header-main {
+    position: relative;
+  }
+  
+  .slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: opacity 1.5s ease-in-out;
+}
+  
+  .slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+  }
+
+  @mixin background-slide($url) {
+   	background: url($url) top center no-repeat; 
+	background-size: cover;
+  }
+
+  .slide:nth-child(1) { @include background-slide("../../images/header-bg-1.jpg"); }
+  .slide:nth-child(2) { @include background-slide("../../images/login_bg.png"); }
+  .slide:nth-child(3) { @include background-slide("../../images/header-bg-2.png"); }
+  
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .slide-content h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.5rem;
+  }
+
+  button{
+    border: none;
+    background-color: rgba($color-white, 0.2);
+    padding: 15px;
+    border-radius: 50%;
+  }
+
+  button:hover {
+    background-color: rgba($color-white, 0.5);
+    color: black;
+}
+
+  /* pour les flèches */
+.prev-slide,
+.next-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.prev-slide {
+  left: .5rem;
+
+  img{
+    width: 45px;
+    margin-left: -5px;
+  }
+}
+
+.next-slide {
+  right: .5rem;
+  img{
+    width: 45px;
+    margin-right: -5px;
+  }
+}
+
+.prev-slide:before,
+.next-slide:before {
+  content: '';
+  display: block;
+  
+}
+
+.next-slide:before {
+  border-right: none;
+  
+}
+
+/* pour les cercles */
+.dot-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+

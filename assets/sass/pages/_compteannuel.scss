@@ -1,0 +1,70 @@
+.compte-annuel {
+
+    &__profil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+    
+    &__item{
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 2rem;
+    }
+    
+}
+
+
+.compte-video{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    .compte-video--icon{
+        width: 640px;
+        height: 360px;
+        background-color: #d9d9d9be;
+        border-radius: 2rem;
+    }
+    .compte-video--play{
+        position: absolute;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        img{
+            width: 120px;
+            &:link,
+            &:visited {
+            transition: all .2s;
+            }
+
+            &:hover {
+    
+                box-shadow: 0 1rem 2rem rgba($color-bleu, .15);
+                transform: translateY(-4px);
+            }
+        
+            &:active {
+                box-shadow: 0 .5rem 1rem rgba($color-bleu, .15);
+                transform: translateY(0);
+            }
+            
+        }
+    }
+}
+

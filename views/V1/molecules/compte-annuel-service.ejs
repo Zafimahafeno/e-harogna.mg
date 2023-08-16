@@ -1,0 +1,37 @@
+<!--<div class="main-container hianatra-sy-hiasa large-v-spacing centered">-->
+    <div class="main-container hianatra-sy-hiasa ">
+       
+        <h1 class="compte-service__titre">
+            Bienvenu dans ton espace
+        </h1>
+
+
+    
+        <p class="paragraph">Pour dynamiser la potentialité professionnelle des abonnés, E-harogna propose 
+            des cours et des formations en ligne et en présentiel. Le tout, complémentaire 
+            et régulier, mais surtout, conçu et basé sur des approches qui reflètent 
+            le plus les réalités du monde du travail.
+        </p>
+    
+        <div class="services">
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/job.png', 
+                    title: "Offre d'emplois", 
+                    link: "/emplois"
+            }) %>
+    
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/atelier.png', 
+                    title: "Ateliers et Presentiels", 
+                    link: "/ateliers-et-presentiels"
+            }) %>
+    
+            <%- include("../molecules/service.ejs", {
+                    illustration: 'images/formation-en-ligne.png', 
+                    title: "Formations en ligne", 
+                    link: "/formations"
+            }) %>
+        </div>
+    
+    </div>
+    

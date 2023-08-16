@@ -1,0 +1,83 @@
+.card-ced {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 320px;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+
+    @media only screen and (max-width: $bp-large) {
+        width: 280px       
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        width: 100vw;  
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    &__img {
+
+        img {
+            width: 320px;
+
+            @media only screen and (max-width: $bp-large) {
+                width: 280px       
+            }
+
+            @media only screen and (max-width: $bp-smallest) {
+
+                width: 200px;
+                
+          
+            }
+            
+        }
+    }
+
+    &__bar {
+        width: 150px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: $bp-small) {
+           display: none;
+    
+        }
+    }
+
+    &__text {
+        width: 250px;
+        margin-bottom: 3rem;
+        font-size: 14px;
+        @media only screen and (max-width: $bp-large) {
+            width: 200px; 
+        }
+
+        @media only screen and (max-width: $bp-small) {
+           border-top: 2px solid rgba(0, 0, 0, 0.5);;
+           margin-left: 2.5rem;
+           padding-top: 2rem;
+     
+         }
+
+         @media only screen and (max-width: $bp-smallest) {
+
+            width: 200px;
+            border-top: 2px solid rgba(0, 0, 0, 0.5);;
+            margin-left: 1rem;
+            padding-top: 1rem;
+      
+          }
+    }
+
+
+}

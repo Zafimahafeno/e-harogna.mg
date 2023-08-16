@@ -1,0 +1,28 @@
+<!--<% 
+const tags = [
+	{ 
+		group: "mathematique",
+		items: [ "lorem", "ipsum", "dolor"] 
+	},
+	{ 
+		group: "Autre",
+		items: [ "lorem", "ipsum", "dolor", "si amet", "consectatum"] 
+	},
+]; %>
+
+<div class="tags-container">
+<% tags.forEach( function(tag) { %>
+	<h2 class="group"><%= tag.group %></h2>
+
+	<ul class="tags">
+	<% tag.items.forEach(function(item) { %>
+		<li class="tag">
+			<label>
+				<input type="checkbox" name="<%= item %>" value="<%= item %>">
+				<%= item %>
+			</label>
+		</li>
+	<% }) %>
+	</ul>
+<% }); %>
+</div>-->

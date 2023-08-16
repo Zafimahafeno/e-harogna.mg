@@ -1,0 +1,40 @@
+.cardtext {
+    background-color: transparent;
+    width: 75vw;
+    height: 260px;
+    font-family: Cairo;
+
+   
+    
+    .cardtext-content {
+      text-align: center;
+      .text-title {
+        margin: 1rem;
+        font-weight: 900;
+        text-transform:capitalize;
+        font-size: 20px;
+        font-family: Cairo;
+        color: $color-black;
+        text-align: center;
+      }
+      .text-content {
+        margin: 2rem;
+        line-height: 1.5;
+        text-align: justify;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $color-black;
+
+        @media only screen and (max-width: $bp-medium) {
+          font-size: 1rem;
+       }
+
+       @media only screen and (max-width: $bp-small) {
+         font-size: 14px;
+         margin: 10px;
+         line-height: 1;
+       }
+      }
+    }
+  }
+  

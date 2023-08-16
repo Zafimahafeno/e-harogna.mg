@@ -1,0 +1,26 @@
+.tags-container {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	.group {
+		font-size: 1.5em;
+	}
+
+	.tags {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+
+		.tag {
+			border: 1px solid #949494; 
+			border-radius: 50px;
+		}
+	}
+
+	label {
+		display: block;
+		width: 100%;
+		padding: 10px 15px;
+	}
+}

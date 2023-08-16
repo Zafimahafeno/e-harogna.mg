@@ -1,0 +1,28 @@
+{
+	"icon": "images/icon7.png",
+	"iconAlt": "icon7.png",
+
+	"title": "Autres",
+	"introduction": "La création d’un projet est un travail acharné, il est nécessaire d’avoir des stratégies, des méthodologies élaborées pour son succès. Pour cela, une bonne gestion vous est utile. Découvrez dans cette catégorie les lignes à suivre pour, contrôler, organiser, assurer vos projets.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/call.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Devenir téléconseiller ",
+			"text": "Rêveriez-vous de devenir un bon téléconseiller? Découvrez les clés pour devenir un expert de la communication à distance. Que vous souhaitiez travailler dans un centre d'appels, offrir un service client de qualité ou développer vos compétences en communication, ce cours vous guidera à travers les connaissances et les techniques essentielles pour exceller dans ce domaine.  "
+		  },
+		  {
+			"imageUrl": "images/categories/image31.png",
+			"imageAlt": "Intersect-1",
+			"title": "Initiation à la comptabilité",
+			"text": "Maîtrisez et gérez votre propre entreprise en travaillant dans le domaine de la finance ou simplement pour mieux comprendre le langage des affaires. Ce cours vous aidera à développer votre compréhension de la comptabilité et à naviguer avec confiance dans le monde des chiffres"
+		  },
+		  {
+			"imageUrl": "images/categories/personne.jpg",
+			"imageAlt": "Intersect-1",
+			"title": "Obtenez l’emploi qui vous correspond ",
+			"text": "Ne laissez pas votre emploi idéal vous échapper ,prenez les rênes de votre avenir et obtenez l'emploi qui vous correspond. Vous découvrirez comment vous présenter efficacement en ligne, développer votre marque personnelle et attirer l'attention des employeurs sans même postuler formellement."
+		  }
+	]
+}

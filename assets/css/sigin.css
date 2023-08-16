@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-grad: linear-gradient(to right, #141E30, #243B55);
+    --grad-clr1: #141E30;
+    --grad-clr2: #243B55;
+    --color-grey: #D9D9D9;
+    --color-green: #00BCD4;
+    
+}
+
+body {
+    height: 100vh;
+    background: #f6f5f7;
+    display: grid;
+    place-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 950px;
+    height: 550px;
+    box-shadow: 25px 30px 55px #5557;
+    border-radius: 13px;
+    overflow: hidden;
+
+    /* background-image: url('../../images/login.png'); */
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(217, 217, 217, 0.9),
+      rgba(217, 217, 217, 0.9)
+    ), url('../../images/login.png');
+    backdrop-filter: blur(15px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.form-container {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    padding: 0px 40px;
+    transition: all 0.6s ease-in-out;
+    margin: 0 auto; /* Ajoutez cette ligne pour centrer horizontalement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-container{
+    opacity: 0;
+    z-index: 1;
+}
+
+.sign-in-container{
+    z-index: 2;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 50px;
+}
+
+h1 {
+    color: var(--grad-clr1);
+    text-align: center;
+}
+
+.social-container {
+    margin: 20px 0px;
+}
+
+.social-container a {
+    border: 1px solid #DDD;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    height: 40px;
+    width: 40px;
+}
+
+
+span {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.inflied {
+    position: relative;
+    margin: 8px 0px;
+    width: 100%;
+}
+
+input {
+    width: 350px;
+    padding: 14px 15px;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin: 1rem;
+}
+
+.infield input[type="email"] {
+    padding-left: 60px;  /* Augmente le padding pour faire de la place pour l'icône */
+    background-image: url('../../assets/images//icons/i-mail.png'); /* Ajoutez votre image d'icône ici */
+    background-repeat: no-repeat; /* Empêche la répétition de l'arrière-plan */
+    background-position: 25px center; /* Place l'icône à gauche centrée verticalement */
+    background-size: auto 24px; /* Ajuste la taille de l'icône en fonction de la hauteur de l'input */
+}
+
+.infield input[type="password"] {
+    padding-left: 60px;  /* Augmente le padding pour faire de la place pour l'icône */
+    background-image: url('../../assets/images//icons/look.svg'); /* Ajoutez votre image d'icône ici */
+    background-repeat: no-repeat; /* Empêche la répétition de l'arrière-plan */
+    background-position: 25px center; /* Place l'icône à gauche centrée verticalement */
+    background-size: auto 24px; /* Ajuste la taille de l'icône en fonction de la hauteur de l'input */
+}
+
+.infield input[type="text"] {
+    padding-left: 60px;  /* Augmente le padding pour faire de la place pour l'icône */
+    background-image: url('../../assets/images//icons/i-user.png'); /* Ajoutez votre image d'icône ici */
+    background-repeat: no-repeat; /* Empêche la répétition de l'arrière-plan */
+    background-position: 25px center; /* Place l'icône à gauche centrée verticalement */
+    background-size: auto 24px; /* Ajuste la taille de l'icône en fonction de la hauteur de l'input */
+}
+
+
+
+label {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: var(--linear-grad);
+    transition: 0.3s;
+}
+
+input:focus ~ label{
+    width: 100%;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0px;
+}
+
+a.forgot {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #EEE;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 1rem;
+}
+
+button, .button-secondary {
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 45px;
+    text-transform: uppercase;
+	text-align: center;
+}
+
+button {
+    background: var(--color-green);
+    color: #fff;
+    border: 2px solid var(--color-green);
+}
+
+.button-secondary {
+    background: none;
+	border: 2px solid white;
+    color: #000;
+	display: none;
+}
+
+
+.form-container button {
+    margin-top: 17px;
+    transition: 80ms ease-in;
+}
+
+.form-container button:hover{
+    background: #FFF;
+    color: var(--grad-clr1);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 9;
+}
+
+#overlayBtn {
+    cursor: pointer;
+    position: absolute;
+    left: 55%;
+    top: 340px;
+    transform: translateX(-55%);
+    width: 155.67px;
+    height: 40px;
+    border: 2px solid var(--color-green);
+    background: transparent;
+    border-radius: 20px;
+    z-index: 999;
+   
+    
+}
+
+.overlay {
+    position: relative;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(15, 52, 249, 0.1),
+      rgba(15, 52, 249, 0.1)
+    ), url('../../images/login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #FFF;
+    font-weight: 700;
+    left: -150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.6s ease-in-out;
+     z-index: 2;
+    
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 40px;
+    text-align: center;
+    height: 100%;
+    width: 340px;
+    transition: 0.6s ease-in-out;
+}
+
+.overlay-left{
+    right: 60%;
+    transform: translateX(-12%);
+}
+
+.overlay-right {
+    right: 0%;
+    transform: translateX(0%);
+}
+
+.overlay-panel h1 {
+    color:  #FFF;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 25px 0px 35px;
+}
+
+.overlay-panel button {
+    border: none;
+    background-color: transparent;
+    margin-right: 12px; 
+}
+
+.right-panel-active .overlay-container {
+    transform: translateX(-150%);
+}
+
+.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.right-panel-active .overlay-left {
+    transform: translateX(25%);
+}
+
+.right-panel-active .overlay-right {
+    transform: translateX(35%);
+}
+
+.right-panel-active .sign-in-container {
+    transform: translateX(20%);
+    opacity: 0;
+}
+
+.right-panel-active .sign-up-container {
+    transform: translateX(66.7%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s ;
+}
+
+@keyframes show {
+    0%, 50% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50.1%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+
+}
+
+.btnScaled {
+    animation: scaleBtn 0.6s;
+}
+
+@keyframes scaleBtn {
+    0% {
+        width: 143.67px;
+    }
+
+    50% {
+        width: 250px;
+    }
+
+    0% {
+        width: 143.67px;
+    }
+}
+
+.login-icon {
+    position: absolute;
+
+    top: 65px;
+}
+
+.login-icon img {
+    width: 85px;
+
+}
+
+.right-icon{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.right-icon img{
+    width: 25px;
+    
+}
+
+.left-icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.left-icon img{
+    width: 25px;
+    
+}
+
+@media only screen and (max-width: 972px) {
+
+	body {
+		display: block;
+	}
+
+    .container{
+        width: 100%;
+        height: 100%;
+		border-radius: 0;
+		box-shadow: none;
+    }  
+
+
+	.sign-up-container{
+		opacity: 1;
+		width: 100%;
+		text-align: center;
+	}
+
+	#overlayCon {
+		display: none;
+	}
+    
+	.sign-in-container {
+		width: 100%;
+		display: none;
+	}
+
+	input, button, .button-secondary {
+		width: 300px;
+	}
+
+	.button-secondary {
+		display: block;
+	}
+
+    h1 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 0;
+        align-self: center;
+        margin-left: 20px;
+    }
+
+    .login-icon img {
+        width: 85px;
+    
+    }
+
+    .right-icon img{
+        width: 20px;
+        
+    }
+
+    
+    .left-icon {
+        position: absolute;
+        top: 10px;
+        left: 4rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    .left-icon img{
+        width: 20px;
+        
+    }
+
+    #overlayBtn {
+        margin-left: 20px;
+        cursor: pointer;
+        position: absolute;
+        left: 43%;
+        top: 278px;  
+              
+    }
+
+    .overlay-panel button {
+        margin-left: 28px; 
+        font-size: 10px;
+    }
+}
+
+
+
+
+footer {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+footer mark {
+    padding: 8px 30px;
+    border-radius: 7px;
+}
+footer a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #003;
+}

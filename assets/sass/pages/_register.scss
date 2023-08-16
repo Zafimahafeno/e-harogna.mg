@@ -1,0 +1,279 @@
+
+  
+  .register {
+    background-image: url('../../images/login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            flex-direction: column;           
+        }
+    }
+
+    &__info{
+        margin-top: -6rem;
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 100%;    
+            background-image: url('../../images/login.png');
+            backdrop-filter: blur(15px);
+            opacity: 0.7;    
+        }
+
+        &--icon{
+            
+            img{
+                width: 12rem;
+                height: 12rem;
+            }
+        }
+
+        &--title{
+            font-family: Cario;
+                font-size: 3.5rem;
+                font-weight: 400;
+                color: $color-white;
+                text-align: center;
+        }
+
+        &--text{
+            font-family: Cario;
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: $color-white;
+                text-align: center;
+                width: 75%;
+                margin-top: 2rem;
+        }
+
+        &--btn{
+
+            align-self: center;
+            border: 1px #44C039 solid ;
+            width: 16rem;
+            height: 4rem;
+            border-radius: 4rem;
+            color: #44C039;
+            cursor: pointer;
+            background-color: rgba($color-white, 0.8);
+            opacity: 0.8;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease-in-out;
+            font-size: 20px;
+            font-weight: 800;
+            @media only screen and (max-width: $bp-medium) {
+                
+            }
+
+            &:hover {
+                width: 16.4rem;
+                height: 4.2rem;
+                background-color: #44C039;
+                color: $color-white;
+    
+            }
+            
+            &:active,
+            &:focus {
+                outline: none;
+                transform: translateY(-1px);
+                box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+            }
+        
+        }
+
+    }
+
+    &__form{
+        width: 60%;
+        height: 100vh;
+        background-image: linear-gradient(
+        to right bottom,
+        rgba($color-grey, 0.5),
+        rgba($color-grey, 0.5));
+        backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 100%;
+            
+                      
+        }
+
+        &--icon{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            position: absolute;
+            top: 2.5rem; left: 2.5rem;
+           
+            .icon-img{
+                width: 2rem;
+                height: 2rem;
+            }
+            
+        }
+
+        
+
+
+        &--head{
+           margin-top: 8rem;
+            display: flex;
+            flex-direction: column;
+           
+
+            .head--title{
+
+                font-family: Cario;
+                font-size: 3rem;
+                font-weight: 600;
+                color: $color-white;
+                text-align: center;
+            }
+
+            .head--ligne{
+                width: 10rem;
+                height: 3px;
+                background-color: $color-white;
+                display: flex;
+                align-self: end;
+                margin-top: 1rem;
+            }
+
+        }
+
+        &--input{
+        
+            .form{
+                margin-top: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &__input{
+                    position: relative;
+                    margin-top: 3rem;
+
+                    &--icon{
+                        position: absolute;
+                        top: 45%;
+                        left: 15px;
+                        transform: translateY(-50%);
+                        color: #ccc;
+                    }
+
+
+                    input[type="text"],
+                    input[type="password"] {
+                    width: 36rem;
+                    height: 3rem;
+                    background: transparent;
+                    padding: 10px 10px 10px 35px;
+                    border-radius: 5rem;
+                    border: 1px $color-white solid;
+                    margin-bottom: 10px;
+                    text-indent: 2.8rem;
+                    color: $color-white;
+                    font-size: 20px;
+                    font-style: italic;
+                    transition: all 0.3s ease-in-out;
+
+                    @media only screen and (max-width: $bp-large) {
+                        width: 30rem;
+                        height: 3rem;
+                    }
+
+                    @media only screen and (max-width: $bp-medium) {
+                        width: 30rem;
+                        height: 3rem;       
+                    }
+
+                    &:focus {
+                        outline: none;
+                        height: 3.2rem;
+                        border: 4px $color-white solid;
+                        
+                        
+                
+                    }
+            
+                    }
+
+                    input[type="text"]::placeholder,
+                    input[type="password"]::placeholder {
+                        font-family: Cario;
+                        font-size: 20px;
+                        font-style: italic;
+                        color: $color-white;
+                       
+                   
+                    }
+                                
+                }
+
+                &__btn{
+                        align-self: center;
+                        border: none;
+                        width: 16rem;
+                        height: 4rem;
+                        border-radius: 4rem;
+                        color: $color-white;
+                        background-color: #44C039;
+                        cursor: pointer;
+                        margin-top: 2rem;
+                        margin-bottom: 1rem;
+                        transition: all 0.3s ease-in-out;
+                        font-size: 20px;
+                        @media only screen and (max-width: $bp-medium) {
+                            
+                        }
+            
+                        &:hover {
+                            width: 16.4rem;
+                            height: 4.2rem;
+                
+                        }
+                        
+                        &:active,
+                        &:focus {
+                            outline: none;
+                            transform: translateY(-1px);
+                            box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+                        }
+                    
+                }
+
+                &__forgot{
+                    font-family: Cario;
+                    font-size: 20px;
+                    font-style: italic;
+                    color: $color-white;
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+  }

@@ -1,0 +1,104 @@
+.coup-de-pouce {
+	@include centered_vertical_items(var(--huge-size));
+	width: 100%;
+	
+	h1 { text-align: center; }
+
+	.stage { 
+		@include centered_vertical_items();
+		padding: var(--large-size);
+		width: 100%;
+		box-sizing: border-box;
+
+		background: url('../images/background-stage.jpg') center left no-repeat;
+		color: white;
+
+		.accompagnement, .intro {
+			padding: var(--large-size);
+		}
+
+		.accompagnement {
+			background: rgba(black, 0.75);
+			@include centered_vertical_items(var(--medium-size));
+			text-align: center;
+
+			width: 100%;
+			height: 100%;
+
+			@media screen and (max-width: 500px) {
+				width: 95%;
+			}
+		}
+
+		.intro {
+			@include centered_vertical_items(var(--medium-size));
+			text-align: center;
+
+			img { width: 300px; }
+		}
+	}
+
+
+	.parrainage {
+		@include centered_vertical_items(var(--large-size));
+		padding: var(--large-size);
+		text-align: center;
+
+		img { width: 70%; }
+	}	
+
+
+	@media screen and (min-width: 700px) {
+		.stage .content {
+			width: 600px;
+		}
+
+		.parrainage {
+			.content {
+				flex-direction: row;
+				gap: var(--medium-size);
+				img { width: 300px; }
+			}
+
+			p {
+				font-size: 1.2em;
+				width: 400px;
+			}
+		}
+	}
+
+
+	@media screen and (min-width: 1000px) {
+		.stage {
+			.content {
+				width: 900px;
+				flex-direction: row-reverse;
+			}
+
+			.intro, .accompagnement { flex: 1; }
+
+			.intro img { 
+				display: block;
+				width: 400px; 
+			}
+		}
+	}
+}
+
+
+.inscription-stage-container {
+	position: fixed;
+	top: 0; left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	background: rgba(black, 0.8);
+	display: none;
+
+	.inscription-stage {
+		position: absolute;
+		top: 55%; right: 50%;
+		transform: translate(50%, -50%);
+	}
+}
+

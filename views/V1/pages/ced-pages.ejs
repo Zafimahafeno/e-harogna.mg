@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('head.ejs'); %>
+	<body>
+		<header style="background-image: url('images/header-bg-2.png')">
+			<%- include('../molecules/header-top.ejs', {current_item: -1}); %>
+
+			<div class="header-main">
+				<div class="content">
+					<p class="content__title"><img src="images/CEDII.png" alt="CEDII.png"></p>
+				</div>
+           	</div>
+		</header>
+
+
+		<% const card1 = {
+			imageUrl: 'images/card-ced-img.png',
+			imageAlt: 'card-ced-img.png',
+			text: "Zo fototra sy adidy ny mifidy, ka tandrovy sy karakarao ny safidinao"
+		}; %>
+
+		<% const card2 = {
+			imageUrl: 'images/card-ced-img.png',
+			imageAlt: 'card-ced-img.png',
+			text: "Andry iankinanan’ny fivoarana any tanora mandala ny fihavanana"
+		}; %>
+
+		<% const card3 = {
+			imageUrl: 'images/card-ced-img.png',
+			imageAlt: 'card-ced-img.png',
+			text: "Treka mampivoatsa ny Tanora eto Fianarantsoa no eto"
+		}; %>
+
+		<main class="main ced">
+			<h1 class="ced__titre">NOS EVENEMENTS ET NOS ARTICLES</h1>
+			<ul class="ced__car">
+				<li class="ced__item">
+					<%- include('../molecules/card-ced.ejs', { imageUrl: card1.imageUrl, imageAlt: card1.imageAlt , text: card1.text}) %>
+				</li>
+				<li class="ced__item">
+					<%- include('../molecules/card-ced.ejs', { imageUrl: card1.imageUrl, imageAlt: card1.imageAlt , text: card2.text}) %>
+				</li>
+				<li class="ced__item">
+					<%- include('../molecules/card-ced.ejs', { imageUrl: card1.imageUrl, imageAlt: card1.imageAlt , text: card2.text}) %>
+				</li>
+			</ul>
+			<div class="ced__blogs">
+				<div class="ced__blogs--right">
+					<img src="images/blogs.png" alt="blogs.png">
+				</div>
+				<div class="ced__blogs--left">
+					<h1 class="left-titre">TREKA MAMPIVOATSA</h1>
+					<p class="left-text"> 
+					</p>
+				</div>
+		
+			</div>
+		</main>
+
+		<%- include('../molecules/footer.ejs'); %>
+	</body>
+</html>

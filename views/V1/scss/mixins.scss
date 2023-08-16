@@ -1,0 +1,16 @@
+@mixin vertical_items($gap: 0) {
+	display: flex;
+	flex-direction: column;
+	gap: $gap;
+}
+
+@mixin centered {
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin centered_vertical_items($gap: 0) {
+	@include vertical_items($gap);
+	@include centered;
+}
+

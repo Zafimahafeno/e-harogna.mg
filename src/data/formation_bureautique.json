@@ -1,0 +1,28 @@
+{
+	"icon": "images/categories/WORD.png",
+	"iconAlt": "icon6.png",
+
+	"title": "Bureautique",
+	"introduction": "Des professions essentielles qui garantissent l'efficacité et le bon fonctionnement des activités administratives au sein des entreprises.Du traitement de texte à la gestion de données, en passant par la planification et la communication, le métier de bureautique vous permettra de naviguer avec aisance dans l'univers professionnel moderne.",
+
+	"items" : [
+		  {
+			"imageUrl": "images/categories/image3.png",
+			"imageAlt": "Intersect-1",
+			"title": "Maîtriser le traitement de texte",
+			"text": "Vous développerez les compétences et les connaissances nécessaires pour créer des documents professionnels, attrayants et efficaces qui captivent l'attention et font forte impression. Que vous souhaitiez rédiger des rapports, des lettres, des CV ou des présentations, le traitement de texte sera votre outil indispensable."
+		  },
+		  {
+			"imageUrl": "images/categories/WORD.png",
+			"imageAlt": "Intersect-1",
+			"title": "Maîtriser Microsoft Word ",
+			"text": "Explorez les techniques de mise en page et de structuration des documents pour les rendre plus clairs et professionnels. Apprenez à utiliser les en-têtes et pieds de page, les numéros de page, les tableaux, les listes et les styles de titre pour organiser vos documents et faciliter la lecture."
+		  },
+		  {
+			"imageUrl": "images/categories/EXCEL.png",
+			"imageAlt": "Intersect-1",
+			"title": "Apprendre Microsoft Excel",
+			"text":"Découvrez les différents types de graphiques disponibles, les options de mise en forme avancées, ainsi que les techniques pour créer des tableaux de bord interactifs qui mettent en valeur les informations clés."
+		  }
+	]
+}

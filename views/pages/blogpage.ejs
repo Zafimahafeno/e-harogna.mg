@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        /* Ajoutez ces styles dans votre fichier CSS */
+    
+        /* Alignement horizontal pour header-top */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent; /* Header-top transparent */
+            padding: 30px; /* Agrandissement de la partie du header-top */
+            color: #fff; /* Texte en blanc */
+        }
+    
+        /* Styles pour la liste de navigation */
+        .header-top ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: right;
+        }
+    
+        .header-top ul li {
+            margin-left: 20px;
+        }
+    
+        .header-top ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px; /* Agrandissement des textes de header-top */
+        }
+    
+        /* Styles supplémentaires pour améliorer la mise en page */
+        .header-top .first-part {
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .header-top .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+    
+        .header-top .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+    
+        .header-top .logo .name {
+            height: 30px;
+        }
+    
+        /* Styles pour la barre de recherche */
+        .mb-4 form .input-group {
+            width: 100%;
+        }
+    
+        .mb-4 form .form-control {
+            border-radius: 0;
+        }
+    
+        .mb-4 form .btn-outline-success {
+            border-radius: 0;
+        }
+    
+        /* Styles pour la liste de catégories */
+        .mb-4 .categories li {
+            margin-bottom: 10px;
+        }
+    
+        /* Styles pour les cartes de cours */
+        .single_post {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    
+        .single_post .header {
+            text-align: center;
+        }
+    
+        .single_post .header h2 {
+            margin: 0;
+        }
+    
+        .single_post .body {
+            margin-top: 20px;
+        }
+    
+        .single_post .body h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+    
+        .single_post .body .meta {
+            margin-top: 10px;
+            list-style: none;
+            padding: 0;
+        }
+    
+        .single_post .body .meta li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    
+        .single_post .body .img-post {
+            position: relative;
+        }
+    
+        .single_post .body .social_share {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    
+        .single_post .body .social_share .btn {
+            margin-right: 5px;
+        }
+    
+        .single_post .body a.btn-info {
+            display: block;
+            margin-top: 30px;
+        }
+    
+        /* Ajout de l'image de fond pour le header */
+        header {
+            background-image: url('images/cours/cours.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        .single_post .body .img-post {
+        position: relative;
+        width: 100%;
+        height: 200px; /* Ajustez la hauteur selon vos besoins */
+        overflow: hidden;
+    }
+
+    .single_post .body .img-post img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .header-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 200px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.title {
+  font-size: 32px; /* Ajustez la taille de la police selon vos besoins */
+  margin-top: 400px; /* Ajustez la marge inférieure selon vos besoins */
+}
+body{
+padding-top: 50px;
+}
+.container.blog-page {
+    margin-top: 50px; /* Ajoutez une marge supérieure de 50 pixels */
+}
+.single_post .header {
+    text-align: center;
+    border: 1px solid gold; /* Ajoutez cette ligne pour définir la couleur d'or */
+}
+
+
+
+    </style>
+    
+    <%- include('../V1/pages/head.ejs'); %>
+
+<header style="background-image: url('images/cours/cours.png')">
+    <%- include('../V1/molecules/header-top.ejs', {current_item: 1}); %>
+<%- include('../layouts/headerfront') %>
+<div class="header-main">
+    <h1 class="title">LISTE DES COURS</h1>
+   </div>
+    
+</header>
+</head>
+<body>
+<div class="container blog-page">
+    <div class="row">
+        <div class="col-sm-12 col-md-9 mb-4">
+            <div class="row">
+                <% if (data.length==0) { %>
+                <div class="col-sm-12 col-md-12">
+                <h4 class="text-center">Aucun cours n'est disponible</h4>
+                </div>
+                <% } else { %>
+                <% data.forEach((item, i)=> { %>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card single_post">
+                        <div class="header">
+                            <h2><strong>Most</strong> View</h2>
+                        </div>
+                        <div class="body">
+                            <h3 class="m-t-0 m-b-5"><a href="blog/<%= item.id %>"><%= item.title %></a></h3>
+                            <ul class="meta">
+                                <li><a href="javascript:void(0);"><i class="fa fa-clock-o"></i>Read time: <%= item.readTime %></a></li>
+                                <li><a href="javascript:void(0);"><i class="zmdi zmdi-label col-amber"></i><%= item.courseCat.title %></a></li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="img-post m-b-15">
+                                <img src="<%= item.image %>" alt="Awesome Image">
+                                <div class="social_share">
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-facebook"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-twitter"></i></button>
+                                    <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i class="zmdi zmdi-instagram"></i></button>
+                                </div>
+                            </div>
+                            <a href="blog/<%= item.id %>" title="read more" class="btn btn-round btn-info">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                <% } %>
+            </div>
+            <nav class="app-pagination">
+                <ul class="pagination justify-content-center">
+                    <% if (meta.page <=1) { %>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <% } else { %>
+                    <li class="page-item">
+                        <a class="page-link" href="blog?page=<%= (meta.page-1) %>" tabindex="-1">Previous</a>
+                    </li>
+                    <% } %>
+                    <% for(var i=0; i< meta.last_page; i++) {%>
+                    <li class="page-item <% if((i+1)==meta.page){%> active <% }%>">
+                        <a class="page-link" href="blog?page=<%= (i+1) %>"><%= (i+1) %></a>
+                    </li>
+                    <% } %>
+                    <% if (meta.page>= meta.last_page) { %>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                    </li>
+                    <% } else { %>
+                    <li class="page-item">
+                        <a class="page-link" href="blog?page=<%= (meta.page+1) %>" tabindex="-1">Next</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-4">
+                <form>
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon2">
+                <button class="input-group-addon btn btn-outline-success" id="basic-addon2"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="mb-4">
+                <h4 class="sidebar-title">Categories</h4>
+                <ul class="list-unstyled categories">
+                    <% category.forEach((item, i)=> { %>
+                    <li><a href="/courses/category/<%= item.id %>"><%= item.title %></a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+    &copy; e-harogna 2023
+</footer>
+
+</html>
+
+

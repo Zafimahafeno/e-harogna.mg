@@ -1,0 +1,121 @@
+.introduction-pricing {
+	height: 100vh;	
+	margin-top: 100px;
+
+	@include vertical_items;
+	@include centered;
+	gap: var(--large-size);
+
+	.title {
+		width: 350px; 
+
+		h1 {
+			font-size: 1.2em;
+			font-family: "AgencyFB";
+			text-align: center;
+			color: var(--color-blue1);
+		}
+
+		h2 { font-family: "AnandaBlack"; }
+	}
+
+	img { display: none; }
+
+	.bloc-container {
+		@include vertical_items;
+		align-items: center;	
+	}
+
+	.bloc {
+		@include vertical_items;
+		gap: var(--large-size);
+		border-radius: var(--medium-size);
+		padding: var(--large-size) var(--medium-size);
+		width: 70%;
+
+		box-shadow: 0 4px 6px rgba(black, 0.2);
+		background: white;
+	}
+
+	ul {
+		@include vertical_items;
+		gap: var(--small-size);
+	}
+
+	li { 
+		display: flex; 
+		align-items: center; 
+		gap: var(--small-size);
+	}
+
+	.icon-check {
+		display: block;
+		min-width: 25px; min-height: 25px;
+		background: url('../images/icons/check.png') top left no-repeat;
+		background-size: cover;
+	}
+
+	.prices {
+		@include vertical_items;
+		align-items: flex-end;
+		gap: var(--small-size);
+
+		color: var(--color-blue1);
+		font-weight: bold;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: flex-end;
+		gap: var(--medium-size);
+
+		@media screen and (max-width: 700px) {
+			flex-direction: column;
+		}
+	}
+
+
+	@media screen and (min-width: 700px) {
+		.title { 
+			position: relative;
+			@include vertical_items;
+			width: 500px;
+
+			h1 { font-size: 1.5em; }
+
+			h2 {
+				position: absolute;
+				right: 40px;
+				bottom: -20px;
+				text-align: right;
+			}
+		}
+
+		.bloc { 
+			width: 500px; 
+			margin-top: 50px;
+		}
+	}
+
+
+	@media screen and (min-width: 1000px) {
+		.main { 
+			display: flex; 
+			flex-direction: row-reverse; 
+		}
+
+		.bloc-container {
+			position: relative;
+			z-index: 1;
+		}
+		
+		img {
+			position: relative;
+			z-index: 2;
+
+			display: block;
+			margin-right: -75px;
+			width: 350px;
+		}		
+	}
+}

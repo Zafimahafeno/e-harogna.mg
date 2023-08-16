@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire d'inscription</title>
+    <!-- Mettez ici vos balises <link> pour les fichiers CSS -->
+</head>
+<body>
+    <div class="stepone">
+        <form method="post" action="/api/register" class="stepone-form">
+            <div class="stepone-form__head">
+                <label for="" class="head--label">Etat Civil</label>
+                <div class="head--ligne"></div>
+            </div>
+            <div class="stepone-form__all">
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-name.png" alt="login-1.png">
+                    </i>
+                    <input type="text" id="nom" name="firstName" placeholder="Nom">
+                </div>
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-user.png" alt="i-user.png">
+                    </i>
+                    <input type="text" id="prenom" name="lastName" placeholder="Prenom">
+                </div>
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-date.png" alt="i-date.png">
+                    </i>
+                    <input type="date" id="date" name="birthDate" placeholder="Date">
+                </div>
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-mail.png" alt="i-mail.png">
+                    </i>
+                    <input type="text" id="email" name="email" placeholder="E-mail">
+                </div>
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-tel.png" alt="i-tel.png">
+                    </i>
+                    <input type="text" id="tel" name="phoneNumber" placeholder="Tel">
+                </div>
+                <div class="stepone-form__input">
+                    <i class="stepone-form__input--icon">
+                        <img src="images/icons/i-home.png" alt="i-home.png">
+                    </i>
+                    <input type="text" id="adresse" name="adress" placeholder="Adresse">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="steptwo">
+        <form method="post" action="/api/register" class="steptwo-form">
+            <div class="steptwo-form__head">
+                <label for="" class="head--label">Expérience professionnelle</label>
+                <div class="head--ligne"></div>
+            </div>
+            <div class="steptwo-form__all">
+                <div class="steptow-job">
+                    <p class="steptow-job__name">Job 1</p>
+                    <div class="steptow-job__input">
+                        <input type="text" class="form-control" name="titre-post1" placeholder="Titre du poste occupé">
+                        <input type="text" class="form-small" name="debut-post1" placeholder="Debut">
+                        <input type="text" class="form-small" name="fin-post1" placeholder="fin">
+                        <div class="form-check">
+                            <input type="checkbox" id="status-post1" name="en-cours-post1" />
+                            <label for="status-post1">En cours</label>
+                        </div>
+                    </div>
+                    <div class="steptow-job__text">
+                        <textarea placeholder="Description du poste" name="description-post1"></textarea>
+                    </div>
+                </div>
+                <div class="steptow-job">
+                    <p class="steptow-job__name">Job 2</p>
+                    <div class="steptow-job__input">
+                        <input type="text" class="form-control" name="titre-post2" placeholder="Titre du poste occupé">
+                        <input type="text" class="form-small" name="debut-post2" placeholder="Debut">
+                        <input type="text" class="form-small" name="fin-post2" placeholder="fin">
+                        <div class="form-check">
+                            <input type="checkbox" id="status-post2" name="en-cours-post2" />
+                            <label for="status-post2">En cours</label>
+                        </div>
+                    </div>
+                    <div class="steptow-job__text">
+                        <textarea placeholder="Description du poste" name="description-post2"></textarea>
+                    </div>
+                </div>
+
+                <h2 class="title">Competences</h2>
+                <%- include('../tags.ejs'); %>
+            </div>
+        </form>
+    </div>
+
+    <div class="setpthree">
+        <form method="post" action="/api/register" class="setpthree-form">
+            <div class="setpthree-form__head">
+                <label for="" class="head--label">Formation , Diplôme</label>
+                <div class="head--ligne"></div>
+            </div>
+            <div class="inputs">
+                <div class="inputs-1">
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-diplome.png" alt="i-diplome.png">
+                        </i>
+                        <input type="text" id="diplome-niveau-etude" name="diplome-niveau-etude" class="form-samll" placeholder="Diplôme / Niveau d’Etude">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-date.png" alt="i-date.png">
+                        </i>
+                        <input type="date" id="date" name="date" class="form-samll" placeholder="Date">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-school.png" alt="i-school.png">
+                        </i>
+                        <input type="text" id="etablissement" name="etablissement" class="form-samll" placeholder="Etablissement">
+                    </div>
+                </div>
+                <div class="inputs-2">
+                    <div class="inputs-2__input">
+                        <input type="text" id="filiere" class="form-control" name="filiere" placeholder="Filière">
+                    </div>
+                </div>
+                <div class="inputs-1">
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-book.png" alt="i-book.png">
+                        </i>
+                        <input type="text" id="formation1" name="formation1" class="form-samll" placeholder="Formation 1">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-school.png" alt="i-school.png">
+                        </i>
+                        <input type="text" id="formation1-etablissement" name="formation1-etablissement" class="form-samll" placeholder="Etablissement 1">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-date.png" alt="i-date.png">
+                        </i>
+                        <input type="date" id="formation1-date" name="formation1-date" class="form-samll" placeholder="Date">
+                    </div>
+                </div>
+                <div class="inputs-1">
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-book.png" alt="i-book.png">
+                        </i>
+                        <input type="text" id="formation2" name="formation2" class="form-samll" placeholder="Formation 2">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-school.png" alt="i-school.png">
+                        </i>
+                        <input type="text" id="formation2-etablissement" name="formation2-etablissement" class="form-samll" placeholder="Etablissement 2">
+                    </div>
+                    <div class="inputs-1__input">
+                        <i class="inputs-1__input--icon">
+                            <img src="images/icons/i-date.png" alt="i-date.png">
+                        </i>
+                        <input type="date" id="formation2-date" name="formation2-date" class="form-samll" placeholder="Date">
+                    </div>
+                </div>
+                <div class="inputs-3"></div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const steptwo = document.querySelector('.steptwo');
+        setTimeout(() => steptwo.classList.add('show'), 50);
+    </script>
+</body>
+
+</html>

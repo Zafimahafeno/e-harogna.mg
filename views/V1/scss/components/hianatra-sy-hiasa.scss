@@ -1,0 +1,30 @@
+.hianatra-sy-hiasa {
+	/* centered */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* large vertical spacing */
+	flex-direction: column;
+	gap: var(--large-size);
+
+
+	img { width: 300px; }	
+
+	.paragraph {
+		text-align: center;
+	}
+
+	.services {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--huge-size);
+	}
+
+	@media screen and (min-width: 700px) {
+		.paragraph {
+			width: 600px;
+		}
+	}
+}

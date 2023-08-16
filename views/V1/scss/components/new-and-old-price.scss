@@ -1,0 +1,26 @@
+.new-and-old-prices {
+
+	height: 55px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	font-weight: bold;
+	font-size: 1.1em;
+
+	.old-price {
+		position: relative;
+		padding: 10px;
+	}
+
+	.old-price .icon-cross {
+		/* centered */
+		position: absolute;
+		top: 10%; left: 35%;
+
+		display: block;
+		width: 30px;
+		margin: auto;
+	}
+}
+

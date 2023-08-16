@@ -1,0 +1,205 @@
+<div class="slider">
+	<div class="slider-card">
+		<div class="slider-menu">
+			<button id="st1" class="slider-menu__item active" data-slide="1">Mentorat</button>
+			<button id="st2" class="slider-menu__item" data-slide="2">Stages</button>
+			<button id="st3" class="slider-menu__item" data-slide="3">Club de Langue</button>
+			<button id="st4" class="slider-menu__item" data-slide="4">CEDII</button>
+		</div>		  
+
+		  
+		  <!-- startslide-pages -->
+		<div class="slider-body">
+			<% const slides = [
+				   {
+			   			id: 1,
+						title1: "ET ",
+						title2: "VOTRE ",
+						title3: "CARRIERE",
+						url:"#",
+						text : "Faites le premier pas et prenez le contrôle de votre vie professionnelle vers une carrière réussie grâce à notre formation présentielle accompagnés de nos mentors expérimentés.Développez vos compétences, explorez de nouvelles opportunités professionnelles et atteignez votre objectif rapidement. Joignez-vous à notre programme et commencez à bâtir un avenir brillant."
+				   },
+				   {
+			   			id: 2,
+						title1: "ET ENCORE ",
+						title2: "VOTRE ",
+						title3: "CARRIERE",
+						url: "#",
+						text: "Vous cherchez un stage pour acquérir des compétences recherchées sur le marché du travail? Nos formations sont conçues pour répondre aux besoins actuels du marché et permettent aux participants de développer des compétences recherchées par les employeurs. Nous travaillons en étroite collaboration avec des entreprises de différents secteurs pour offrir des opportunités de stage à nos participants. Rejoignez-nous pour une expérience de formation et de stage enrichissante et valorisante"
+				   },
+				   {
+			   			id: 3,
+						title1: "ET ENCORE PLUS ",
+						title2: "VOTRE ",
+						title3: "CARRIERE",
+						url: "#",
+						text: "Boostez votre potentiel linguistique avec notre club de langue! Nous avons établi un partenariat avec l'Alliance française pour vous accompagner dans la perfection de vos compétences linguistiques. De plus, une adhésion gratuite à la bibliothèque est incluse pour tous les membres du club. Rejoignez-nous pour améliorer votre maîtrise des langues étrangères"
+				   },
+				   {
+			   			id: 4,
+						title1: "CEDII",
+						title2: "VOTREE",
+						title3: "CARRIERE",
+						url: "/ced-pages",
+						text: "Profitez de notre partenariat avec CEDII Fianarantsoa pour accéder à des opportunités d'emploi! En adhérant à notre formation, vous bénéficierez d'un accès privilégié à des offres d'emploi proposées par CEDII. Nous sommes fiers de collaborer avec cette organisation renommée pour offrir des débouchés professionnels à nos membres. Rejoignez-nous pour développer vos compétences et accéder à des opportunités de carrière passionnantes"
+				   },
+				
+				];
+
+				slides.forEach(function (slide) { %>
+					<div class="slider-body__item" data-slide="<%= slide.id %>">
+						<h1 class="slider-body__item--titre">
+							<%= slide.title1 %>
+						</h1>
+						<div class="slider-body__item--titre-1">
+							<h1 class="item--titre-1">
+								<%= slide.title2 %>
+							</h1>
+							<p class="item-carriere"><%= slide.title3 %></p>
+						</div>
+						<p class="slider-body__item--text">
+							<%= slide.text %>
+						</p>
+						<a class="btn-white-link" href="<%= slide.url %>">
+							<button class="btn-white" data-slide="<%= slide.id %>">VOIR</button>
+						</a>
+					</div>
+				<% });
+			%>
+			
+			<div class="slider-arrows">
+				<button onclick="previous()" class="slider-arrow slider-arrow--prev"> 
+					<img src="images/icons/arrow-l.png" alt="arrow-l.png">
+				</button>
+				<button onclick="next()" class="slider-arrow slider-arrow--next"> 
+					<img src="images/icons/arrow-r.png" alt="arrow-r.png">
+				</button>
+			</div>
+		</div>
+		<!-- end slides -->      
+	</div>
+</div>
+<div class="emptyDiv"></div>
+<script>
+
+	const menuItems = document.querySelectorAll(".slider-menu__item");
+	const sliderItems = document.querySelectorAll('.slider-body__item');
+
+	// Définir l'index de la diapositive actuelle
+	let currentSlideIndex = 0;
+
+	// Définir la direction du défilement (1 pour aller vers l'avant, -1 pour revenir en arrière)
+	let scrollDirection = 1;
+
+	// Fonction pour faire défiler vers la diapositive suivante
+	function scrollToNextSlide() {
+	currentSlideIndex += scrollDirection;
+	// Vérifier si la diapositive actuelle est la première ou la dernière
+	if (currentSlideIndex < 0) {
+		currentSlideIndex = 1; // Aller à la deuxième diapositive
+		scrollDirection = 1; // Changer la direction du défilement pour aller vers l'avant
+	} else if (currentSlideIndex >= sliderItems.length) {
+		currentSlideIndex = sliderItems.length - 2; // Aller à l'avant-dernière diapositive
+		scrollDirection = -1; // Changer la direction du défilement pour revenir en arrière
+	}
+
+	const scrollLeftValue = currentSlideIndex * sliderItems[0].offsetWidth;
+	document.querySelector('.slider-body').scrollTo({
+		left: scrollLeftValue,
+		behavior: 'smooth'
+	});
+	menuItems.forEach((item) => {
+		item.classList.remove("active");
+	});
+	const activeMenuItem = menuItems[currentSlideIndex];
+	activeMenuItem.classList.add("active");
+
+	}
+	
+	function startSlide() {
+		slideInterval = setInterval(scrollToNextSlide, 3000);
+	}
+	
+	function stopSlide() {
+		clearInterval(slideInterval);
+
+	// Récupérer la position actuelle de la diapositive en cours de défilement
+	const currentPosition = currentSlideIndex * sliderItems[0].offsetWidth;
+
+	document.querySelector('.slider-body').scrollTo({
+		left: currentPosition,
+		behavior: 'smooth'
+	});
+	}
+	
+	
+	menuItems.forEach((menuItem) => {
+		menuItem.addEventListener("click", () => {
+
+			stopSlide(); // Arrêter le défilement automatique lorsqu'un élément de menu est cliqué
+		});
+	});
+
+	function next() {
+		stopSlide();
+		currentSlideIndex++;
+		if (currentSlideIndex >= sliderItems.length) {
+		  currentSlideIndex = 0; // Revenir au premier slide
+		}
+		const scrollLeftValue = currentSlideIndex * sliderItems[0].offsetWidth;
+		document.querySelector('.slider-body').scrollTo({
+			left: scrollLeftValue,
+			behavior: 'smooth'
+		});
+
+		menuItems.forEach((item) => {
+			item.classList.remove("active");
+		});
+		const activeMenuItem = menuItems[currentSlideIndex];
+		activeMenuItem.classList.add("active");
+	}	
+	function previous() {
+		stopSlide();
+		currentSlideIndex--;
+		if (currentSlideIndex < 0) {
+		  currentSlideIndex = sliderItems.length - 1; // Revenir au dernier slide
+		}
+		const scrollLeftValue = currentSlideIndex * sliderItems[0].offsetWidth;
+		document.querySelector('.slider-body').scrollTo({
+			left: scrollLeftValue,
+			behavior: 'smooth'
+		});
+
+		menuItems.forEach((item) => {
+			item.classList.remove("active");
+		});
+		const activeMenuItem = menuItems[currentSlideIndex];
+		activeMenuItem.classList.add("active");
+
+	}
+	menuItems.forEach((menuItem) => {
+		menuItem.addEventListener("click", () => {
+		  	stopSlide(); // Arrêter le défilement automatique lorsqu'un élément de menu est cliqué
+		  	// Retirer la classe "active" de tous les boutons du menu
+			menuItems.forEach((item) => {
+			item.classList.remove("active");
+		});
+			// Ajouter la classe "active" au bouton de menu cliqué
+			menuItem.classList.add("active");
+			// Récupérer le data-slide correspondant au bouton de menu cliqué
+			const slideIndex = parseInt(menuItem.getAttribute("data-slide"));
+		  	// Mettre à jour currentSlideIndex avec le data-slide
+			currentSlideIndex = slideIndex - 1;
+			// Calculer la position de défilement
+			const scrollLeftValue = currentSlideIndex * sliderItems[0].offsetWidth;
+			// Appliquer la fonction scrollTo() pour naviguer vers le slide correspondant
+			document.querySelector('.slider-body').scrollTo({
+				left: scrollLeftValue,
+				behavior: 'smooth'
+		});
+		});
+	});
+
+	startSlide();
+		
+</script>
