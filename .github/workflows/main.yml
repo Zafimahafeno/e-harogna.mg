@@ -1,42 +1,20 @@
-name: CI/CD tasks
-on:
+on: 
     push:
         branches:
             -main
+name: 🚀 Deploy website on push
 jobs:
-    build:
-        runs-on: Alma Linux 8.5
-        
-        steps:
-            - name: Deploy app to server using ssh
-              uses: appleboy/ssh-action@master
-              with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  password: ${{ secrets.PASSWORD }}
-                  port: 80
-                  script: |
-                      if [ -d ~/www/e-harogna.mg/ ]; then
-                          echo "==> Repository exists. Performing git pull..."
-                          cd ~/www/e-harogna.mg/
-                          git pull origin main
-                      else
-                          echo "==> Repository does not exist. Cloning the repository..."
-                          mkdir -p ~/www/e-harogna.mg/
-                          cd ~/www/e-harogna.mg/
-                          git clone git@github.com:Zafimahafeno/e-harogna.mg.git .
-                          cp ~/www/.env/.env .
-                      fi
-                      echo "==> Running the rest of commands..."
-                      git checkout dev
-                      git status
-
-                      if [[ "$(docker images -q e-harognamg-web:latest 2> /dev/null)" == "" ]]; then
-                        echo "==> Image does not exist. Skipping the Docker image removal..."
-                      else
-                        echo "==> Image exists. Removing the Docker image..."
-                        docker compose down
-                        docker rmi e-harognamg-web
-                      fi
-                      echo "==> Up containers..."
-                      docker compose up -d
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: Alma Linux 8.5
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.samkirkland.com
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: /var/html/www/e-harogna.mg
