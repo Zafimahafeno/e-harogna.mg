@@ -4,7 +4,7 @@ on:
         branches: [main]
 jobs:
     build:
-        runs-on: Ubuntu-22.04
+        runs-on: Alma Linux 8.5
         
         steps:
             - name: Deploy app to server using ssh
@@ -13,7 +13,7 @@ jobs:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
-                  port: 22
+                  port: 80
                   script: |
                       if [ -d ~/www/e-harogna.mg/ ]; then
                           echo "==> Repository exists. Performing git pull..."
